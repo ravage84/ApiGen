@@ -86,7 +86,7 @@ skip:
     # bug: https://github.com/Symplify/Symplify/issues/121
     Symplify\CodingStandard\Sniffs\WhiteSpace\InBetweenMethodSpacingSniff:
         - tests/Parser/Reflection/ReflectionFunctionSource/functions.php
-        - tests/Parser/ParserSource/SomeFunction.php
+        - tests/Parser/Parser/ParserSource/SomeFunction.php
 
     SlevomatCodingStandard\Sniffs\Classes\ClassConstantVisibilitySniff:
         - tests/Parser/Reflection/ReflectionClassSource/ParentClass.php
