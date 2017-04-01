@@ -2,10 +2,10 @@
 
 namespace ApiGen\Tests\Console\Command;
 
+use ApiGen\Configuration\ConfigurationOptions;
 use ApiGen\Console\Command\GenerateCommand;
 use ApiGen\Tests\AbstractContainerAwareTestCase;
-use ApiGen\Tests\MethodInvoker;
-use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\Console\Output\Output;
@@ -31,23 +31,15 @@ final class GenerateCommandExecuteTest extends AbstractContainerAwareTestCase
     {
         $this->assertFileNotExists(TEMP_DIR . '/Api/index.html');
 
-        $inputMock = $this->createMock(InputInterface::class);
-        $inputMock->method('getArgument')->willReturn([
-            __DIR__ . '/Source'
+        $input = new ArrayInput([
+            ConfigurationOptions::SOURCE => [__DIR__ . '/Source'],
+            '--' . ConfigurationOptions::DESTINATION => TEMP_DIR . '/Api',
         ]);
-        $inputMock->method('getOptions')->willReturn([
-            'config' => null,
-            'destination' => TEMP_DIR . '/Api',
-        ]);
-        $outputMock = $this->createMock(OutputInterface::class);
 
+        $exitCode = $this->generateCommand->run($input, new NullOutput);
         $this->assertSame(
             0, // success
-            MethodInvoker::callMethodOnObject(
-                $this->generateCommand,
-                'execute',
-                [$inputMock, $outputMock]
-            )
+            $exitCode
         );
 
         $this->assertFileExists(TEMP_DIR . '/Api/index.html');
@@ -58,18 +50,10 @@ final class GenerateCommandExecuteTest extends AbstractContainerAwareTestCase
      */
     public function testExecuteWithError(): void
     {
-        $inputMock = $this->createMock(InputInterface::class);
-        $inputMock->method('getArgument')->willReturn([
-            __DIR__
-        ]);
-        $inputMock->method('getOptions')->willReturn([
-            'config' => null
+        $input = new ArrayInput([
+            ConfigurationOptions::SOURCE => [__DIR__]
         ]);
 
-        MethodInvoker::callMethodOnObject(
-            $this->generateCommand,
-            'execute',
-            [$inputMock, new NullOutput()]
-        );
+        $this->generateCommand->run($input, new NullOutput);
     }
 }
