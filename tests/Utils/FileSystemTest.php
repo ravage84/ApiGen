@@ -12,18 +12,18 @@ final class FileSystemTest extends TestCase
      */
     private $fileSystem;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->fileSystem = new FileSystem;
     }
 
-    public function testNormalizePath(): void
+    public function testNormalizePath()
     {
         $backslashPath = 'C:' . DIRECTORY_SEPARATOR . 'Program Files' . DIRECTORY_SEPARATOR . 'ApiGen';
         $this->assertSame($backslashPath, $this->fileSystem->normalizePath($backslashPath));
     }
 
-    public function testEnsureDirectoryExists(): void
+    public function testEnsureDirectoryExists()
     {
         $filePath = TEMP_DIR . '/some/dir/file.txt';
         $dirPath = dirname($filePath);
@@ -33,7 +33,7 @@ final class FileSystemTest extends TestCase
         $this->assertFileExists($dirPath);
     }
 
-    public function testPurgeDir(): void
+    public function testPurgeDir()
     {
         $dir = TEMP_DIR . '/dir-with-content';
         mkdir($dir);
@@ -50,7 +50,7 @@ final class FileSystemTest extends TestCase
         $this->assertFileNotExists($dir);
     }
 
-    public function testPurgeDirOnNonExistingDir(): void
+    public function testPurgeDirOnNonExistingDir()
     {
         $dir = TEMP_DIR . '/not-created-dir';
         $this->assertFileNotExists($dir);
@@ -59,7 +59,7 @@ final class FileSystemTest extends TestCase
         $this->assertFileExists($dir);
     }
 
-    public function testGetAbsolutePath(): void
+    public function testGetAbsolutePath()
     {
         $absoluteDir = $this->fileSystem->normalizePath(TEMP_DIR . '/relative-dir');
         mkdir($absoluteDir);
@@ -83,7 +83,7 @@ final class FileSystemTest extends TestCase
         );
     }
 
-    public function testIsDirEmpty(): void
+    public function testIsDirEmpty()
     {
         $this->assertTrue($this->fileSystem->isDirEmpty(__DIR__ . '/FileSystemSource/EmptyDir'));
         $this->assertFalse($this->fileSystem->isDirEmpty(__DIR__ . '/FileSystemSource/NonEmptyDir'));

@@ -209,7 +209,7 @@ final class InterfaceReflection implements InterfaceReflectionInterface, Transfo
         return $this->betterInterfaceReflection->implementsInterface($interface);
     }
 
-    public function setTransformerCollector(TransformerCollector $transformerCollector): void
+    public function setTransformerCollector(TransformerCollector $transformerCollector)
     {
         $this->transformerCollector = $transformerCollector;
     }

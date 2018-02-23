@@ -13,7 +13,7 @@ final class ClassGeneratorTest extends AbstractContainerAwareTestCase
      */
     private $classElementGenerator;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         /** @var Parser $parser */
         $parser = $this->container->get(Parser::class);
@@ -22,7 +22,7 @@ final class ClassGeneratorTest extends AbstractContainerAwareTestCase
         $this->classElementGenerator = $this->container->get(ClassGenerator::class);
     }
 
-    public function testGenerate(): void
+    public function testGenerate()
     {
         $this->classElementGenerator->generate();
 

@@ -34,7 +34,7 @@ final class AutoCompleteDataGenerator implements GeneratorInterface
         $this->autocompleteElements = $autocompleteElements;
     }
 
-    public function generate(): void
+    public function generate()
     {
         $this->templateRenderer->renderToFile(
             $this->configuration->getTemplatesDirectory() . DIRECTORY_SEPARATOR . 'elementlist.js.latte',

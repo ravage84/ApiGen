@@ -13,12 +13,12 @@ final class NamespaceRouteTest extends AbstractContainerAwareTestCase
      */
     private $stringRouter;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->stringRouter = $this->container->get(StringRouter::class);
     }
 
-    public function test(): void
+    public function test()
     {
         $namespaceName = 'SomeNamespace\SubNamespace';
 

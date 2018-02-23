@@ -6,11 +6,11 @@ use Countable;
 
 final class SomeClass implements SomeInterface, Countable
 {
-    public function getSomeStuff(): void
+    public function getSomeStuff()
     {
     }
 
-    public function riseAndShine(): void
+    public function riseAndShine()
     {
     }
 

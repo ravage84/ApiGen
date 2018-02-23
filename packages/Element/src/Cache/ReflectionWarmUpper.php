@@ -19,7 +19,7 @@ final class ReflectionWarmUpper
         $this->reflectionStorage = $reflectionStorage;
     }
 
-    public function warmUp(): void
+    public function warmUp()
     {
         $this->warmUpClassReflections();
         $this->warmUpInterfaceReflections();
@@ -27,7 +27,7 @@ final class ReflectionWarmUpper
         $this->warmUpFunctionReflections();
     }
 
-    private function warmUpClassReflections(): void
+    private function warmUpClassReflections()
     {
         foreach ($this->reflectionStorage->getClassReflections() as $classReflection) {
             $classReflection->getOwnConstants();
@@ -38,7 +38,7 @@ final class ReflectionWarmUpper
         }
     }
 
-    private function warmUpInterfaceReflections(): void
+    private function warmUpInterfaceReflections()
     {
         foreach ($this->reflectionStorage->getInterfaceReflections() as $interfaceReflection) {
             $interfaceReflection->getOwnConstants();
@@ -48,7 +48,7 @@ final class ReflectionWarmUpper
         }
     }
 
-    private function warmUpTraitReflections(): void
+    private function warmUpTraitReflections()
     {
         foreach ($this->reflectionStorage->getTraitReflections() as $traitReflection) {
             $traitReflection->getOwnProperties();
@@ -58,7 +58,7 @@ final class ReflectionWarmUpper
         }
     }
 
-    private function warmUpFunctionReflections(): void
+    private function warmUpFunctionReflections()
     {
         foreach ($this->reflectionStorage->getFunctionReflections() as $functionReflection) {
             $functionReflection->getParameters();

@@ -18,7 +18,7 @@ final class FunctionParameterReflectionTest extends AbstractParserAwareTestCase
      */
     private $functionParameterReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
 
@@ -28,7 +28,7 @@ final class FunctionParameterReflectionTest extends AbstractParserAwareTestCase
         $this->functionParameterReflection = $functionReflection->getParameters()['arguments'];
     }
 
-    public function testDeclaringFunction(): void
+    public function testDeclaringFunction()
     {
         $this->assertInstanceOf(
             FunctionReflectionInterface::class,
@@ -41,7 +41,7 @@ final class FunctionParameterReflectionTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testType(): void
+    public function testType()
     {
         $this->assertSame('string', $this->functionParameterReflection->getTypeHint());
         $this->assertTrue($this->functionParameterReflection->isVariadic());
@@ -49,12 +49,12 @@ final class FunctionParameterReflectionTest extends AbstractParserAwareTestCase
         $this->assertFalse($this->functionParameterReflection->isCallable());
     }
 
-    public function testDescription(): void
+    public function testDescription()
     {
         $this->assertSame('and their description', $this->functionParameterReflection->getDescription());
     }
 
-    public function testDefaults(): void
+    public function testDefaults()
     {
         $this->assertNull($this->functionParameterReflection->getDefaultValue());
     }

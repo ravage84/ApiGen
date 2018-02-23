@@ -10,7 +10,7 @@ final class InheritdocClass implements InheritdocInterface
     /**
      * @inheritdoc
      */
-    public function methodWithInherit(): void
+    public function methodWithInherit()
     {
     }
 }

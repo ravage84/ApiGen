@@ -20,7 +20,7 @@ final class ParentsTest extends AbstractParserAwareTestCase
      */
     private $classReflectionOfParentClass;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
         $classReflections = $this->reflectionStorage->getClassReflections();
@@ -28,27 +28,27 @@ final class ParentsTest extends AbstractParserAwareTestCase
         $this->classReflectionOfParentClass = $classReflections[ParentClass::class];
     }
 
-    public function testGetParentClass(): void
+    public function testGetParentClass()
     {
         $this->assertInstanceOf(ClassReflectionInterface::class, $this->classReflection->getParentClass());
     }
 
-    public function testGetParentClassName(): void
+    public function testGetParentClassName()
     {
         $this->assertSame(ParentClass::class, $this->classReflection->getParentClassName());
     }
 
-    public function testGetParentClasses(): void
+    public function testGetParentClasses()
     {
         $this->assertCount(1, $this->classReflection->getParentClasses());
     }
 
-    public function testGetSubClasses(): void
+    public function testGetSubClasses()
     {
         $this->assertCount(2, $this->classReflectionOfParentClass->getSubClasses());
     }
 
-    public function testIsSubclassOf(): void
+    public function testIsSubclassOf()
     {
         $this->assertTrue($this->classReflection->isSubclassOf(ParentClass::class));
         $this->assertFalse($this->classReflection->isSubclassOf(ArrayAccess::class));

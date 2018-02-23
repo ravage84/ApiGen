@@ -24,7 +24,7 @@ final class FunctionReflectionTest extends AbstractParserAwareTestCase
      */
     private $simpleFunctionReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
 
@@ -33,13 +33,13 @@ final class FunctionReflectionTest extends AbstractParserAwareTestCase
         $this->simpleFunctionReflection = $functionReflections[$this->namespacePrefix . '\add'];
     }
 
-    public function testLines(): void
+    public function testLines()
     {
         $this->assertSame(15, $this->functionReflection->getStartLine());
         $this->assertSame(18, $this->functionReflection->getEndLine());
     }
 
-    public function testNames(): void
+    public function testNames()
     {
         $this->assertSame('add', $this->simpleFunctionReflection->getShortName());
 
@@ -47,7 +47,7 @@ final class FunctionReflectionTest extends AbstractParserAwareTestCase
         $this->assertSame('someAloneFunction', $this->functionReflection->getShortName());
     }
 
-    public function testNamespaces(): void
+    public function testNamespaces()
     {
         $this->assertSame(
             $this->namespacePrefix,
@@ -55,7 +55,7 @@ final class FunctionReflectionTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testAnnotations(): void
+    public function testAnnotations()
     {
         $this->assertCount(4, $this->functionReflection->getAnnotations());
         $this->assertTrue($this->functionReflection->hasAnnotation('return'));
@@ -73,7 +73,7 @@ final class FunctionReflectionTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testParameters(): void
+    public function testParameters()
     {
         $parameters = $this->functionReflection->getParameters();
         $this->assertCount(3, $parameters);
@@ -85,7 +85,7 @@ final class FunctionReflectionTest extends AbstractParserAwareTestCase
         $this->assertSame(['number', 'name', 'arguments'], array_keys($parameters));
     }
 
-    public function testFileName(): void
+    public function testFileName()
     {
         $this->assertSame(__DIR__ . '/Source/SomeFunction.php', $this->functionReflection->getFileName());
     }

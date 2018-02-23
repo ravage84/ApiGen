@@ -14,7 +14,7 @@ final class NamespaceGeneratorTest extends AbstractContainerAwareTestCase
      */
     private $namespaceGenerator;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         /** @var Parser $parser */
         $parser = $this->container->get(Parser::class);
@@ -23,7 +23,7 @@ final class NamespaceGeneratorTest extends AbstractContainerAwareTestCase
         $this->namespaceGenerator = $this->container->get(NamespaceGenerator::class);
     }
 
-    public function test(): void
+    public function test()
     {
         $this->namespaceGenerator->generate();
         $this->assertFileExists(TEMP_DIR . '/namespace-ApiGen.Tests.Generator.Source.html');

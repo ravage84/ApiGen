@@ -37,7 +37,7 @@ final class ElementsTemplateVariablesEventSubscriber implements EventSubscriberI
         ];
     }
 
-    public function loadTemplateVariables(CreateTemplateEvent $createTemplateEvent): void
+    public function loadTemplateVariables(CreateTemplateEvent $createTemplateEvent)
     {
         $parameterBag = $createTemplateEvent->getParameterBag();
         // add default empty values

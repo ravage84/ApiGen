@@ -29,7 +29,7 @@ final class ClassConstantReflectionTest extends AbstractParserAwareTestCase
      */
     private $composedWithDirConstantReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
 
@@ -41,23 +41,23 @@ final class ClassConstantReflectionTest extends AbstractParserAwareTestCase
         $this->composedWithDirConstantReflection = $classReflection->getConstant('COMPOSED_WITH_DIR');
     }
 
-    public function testInstance(): void
+    public function testInstance()
     {
         $this->assertInstanceOf(ClassConstantReflectionInterface::class, $this->classConstantReflection);
     }
 
-    public function testGetDeclaringClass(): void
+    public function testGetDeclaringClass()
     {
         $this->assertInstanceOf(ClassReflectionInterface::class, $this->classConstantReflection->getDeclaringClass());
         $this->assertSame(ConstantInClass::class, $this->classConstantReflection->getDeclaringClassName());
     }
 
-    public function testGetName(): void
+    public function testGetName()
     {
         $this->assertSame('CONSTANT_INSIDE', $this->classConstantReflection->getName());
     }
 
-    public function testValue(): void
+    public function testValue()
     {
         $this->assertSame('int', $this->classConstantReflection->getTypeHint());
         $this->assertSame(55, $this->classConstantReflection->getValue());
@@ -67,20 +67,20 @@ final class ClassConstantReflectionTest extends AbstractParserAwareTestCase
         $this->assertSame([1, 2], $this->arrayClassConstantReflection->getValue());
     }
 
-    public function testLines(): void
+    public function testLines()
     {
         $this->assertSame(12, $this->classConstantReflection->getStartLine());
         $this->assertSame(12, $this->classConstantReflection->getEndLine());
     }
 
-    public function testVisibility(): void
+    public function testVisibility()
     {
         $this->assertTrue($this->classConstantReflection->isPublic());
         $this->assertFalse($this->classConstantReflection->isProtected());
         $this->assertFalse($this->classConstantReflection->isPrivate());
     }
 
-    public function testAnnotations(): void
+    public function testAnnotations()
     {
         $this->assertSame('Nice description.', $this->classConstantReflection->getDescription());
     }

@@ -51,7 +51,7 @@ final class Parser
     /**
      * @param string[] $sources
      */
-    public function parseFilesAndDirectories(array $sources): void
+    public function parseFilesAndDirectories(array $sources)
     {
         [$files, $directories] = $this->splitSourcesToDirectoriesAndFiles($sources);
 
@@ -65,7 +65,7 @@ final class Parser
     /**
      * @param object[] $classInterfaceAndTraitReflections
      */
-    private function separateClassInterfaceAndTraitReflections(array $classInterfaceAndTraitReflections): void
+    private function separateClassInterfaceAndTraitReflections(array $classInterfaceAndTraitReflections)
     {
         $classReflections = array_filter($classInterfaceAndTraitReflections, function ($reflection) {
             return $reflection instanceof ClassReflectionInterface;
@@ -184,14 +184,14 @@ final class Parser
         return $reflections;
     }
 
-    private function parseClassElements(SourceLocator $sourceLocator): void
+    private function parseClassElements(SourceLocator $sourceLocator)
     {
         $classReflector = new ClassReflector($sourceLocator);
         $classInterfaceAndTraitReflections = $this->transformBetterClassInterfaceAndTraitReflections($classReflector);
         $this->separateClassInterfaceAndTraitReflections($classInterfaceAndTraitReflections);
     }
 
-    private function parseFunctions(SourceLocator $sourceLocator): void
+    private function parseFunctions(SourceLocator $sourceLocator)
     {
         $functionReflector = new FunctionReflector($sourceLocator, new ClassReflector($sourceLocator));
         $functionReflections = $this->transformBetterFunctionReflections($functionReflector);

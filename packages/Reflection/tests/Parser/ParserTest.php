@@ -11,7 +11,7 @@ use ApiGen\Tests\AbstractContainerAwareTestCase;
 
 final class ParserTest extends AbstractContainerAwareTestCase
 {
-    public function testFilesAndDirectorySource(): void
+    public function testFilesAndDirectorySource()
     {
         $parser = $this->container->get(Parser::class);
         $reflectionStorage = $this->container->get(ReflectionStorage::class);
@@ -26,7 +26,7 @@ final class ParserTest extends AbstractContainerAwareTestCase
         $this->assertArrayHasKey(ParentClassFromAnotherSource::class, $classReflections);
     }
 
-    public function testFiles(): void
+    public function testFiles()
     {
         $parser = $this->container->get(Parser::class);
         $reflectionStorage = $this->container->get(ReflectionStorage::class);

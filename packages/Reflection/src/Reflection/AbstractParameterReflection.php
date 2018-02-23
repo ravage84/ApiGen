@@ -89,7 +89,7 @@ abstract class AbstractParameterReflection implements AbstractParameterReflectio
         return $this->betterParameterReflection->isPassedByReference();
     }
 
-    public function setTransformerCollector(TransformerCollector $transformerCollector): void
+    public function setTransformerCollector(TransformerCollector $transformerCollector)
     {
         $this->transformerCollector = $transformerCollector;
     }
@@ -97,7 +97,7 @@ abstract class AbstractParameterReflection implements AbstractParameterReflectio
     private function removeClassPreSlashes(string $types): string
     {
         $typesInArray = explode('|', $types);
-        array_walk($typesInArray, function (&$value): void {
+        array_walk($typesInArray, function (&$value) {
             $value = ltrim($value, '\\');
         });
 

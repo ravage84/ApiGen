@@ -10,5 +10,5 @@ interface InheritdocInterface
     /**
      * Some interface method description.
      */
-    public function methodWithInherit(): void;
+    public function methodWithInherit();
 }

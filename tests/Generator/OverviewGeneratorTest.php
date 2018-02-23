@@ -7,7 +7,7 @@ use ApiGen\Tests\AbstractContainerAwareTestCase;
 
 final class OverviewGeneratorTest extends AbstractContainerAwareTestCase
 {
-    public function test(): void
+    public function test()
     {
         /** @var IndexGenerator $overviewGenerator */
         $overviewGenerator = $this->container->get(IndexGenerator::class);

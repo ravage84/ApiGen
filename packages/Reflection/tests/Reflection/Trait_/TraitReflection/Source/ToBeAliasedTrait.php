@@ -9,7 +9,7 @@ trait ToBeAliasedTrait
      */
     public $aliasedProperty;
 
-    public function aliasedParentMethod(): void
+    public function aliasedParentMethod()
     {
     }
 }

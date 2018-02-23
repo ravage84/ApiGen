@@ -8,7 +8,7 @@ use Roave\BetterReflection\Reflection\ReflectionClass;
 
 final class TransformerCollectorTest extends AbstractContainerAwareTestCase
 {
-    public function testClassSorting(): void
+    public function testClassSorting()
     {
         $reflections = [
             $this->createClassReflectionMock('ClassZ'),

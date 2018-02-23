@@ -20,7 +20,7 @@ final class ClassParameterReflectionTest extends AbstractParserAwareTestCase
      */
     private $parameterReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
 
@@ -30,7 +30,7 @@ final class ClassParameterReflectionTest extends AbstractParserAwareTestCase
         $this->parameterReflection = $methodReflection->getParameters()['parameterClass'];
     }
 
-    public function testGetTypeHint(): void
+    public function testGetTypeHint()
     {
         $this->assertSame(ParameterClass::class, $this->parameterReflection->getTypeHint());
     }

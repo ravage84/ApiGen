@@ -197,7 +197,7 @@ final class TraitReflection implements TraitReflectionInterface, TransformerColl
         return $this->docBlock->hasTag($name);
     }
 
-    public function setTransformerCollector(TransformerCollector $transformerCollector): void
+    public function setTransformerCollector(TransformerCollector $transformerCollector)
     {
         $this->transformerCollector = $transformerCollector;
     }

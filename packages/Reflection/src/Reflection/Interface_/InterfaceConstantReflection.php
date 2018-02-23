@@ -132,7 +132,7 @@ final class InterfaceConstantReflection implements InterfaceConstantReflectionIn
             ->getName();
     }
 
-    public function setTransformerCollector(TransformerCollector $transformerCollector): void
+    public function setTransformerCollector(TransformerCollector $transformerCollector)
     {
         $this->transformerCollector = $transformerCollector;
     }

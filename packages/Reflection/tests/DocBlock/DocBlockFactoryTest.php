@@ -15,12 +15,12 @@ final class DocBlockFactoryTest extends AbstractContainerAwareTestCase
      */
     private $docBlockFactory;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->docBlockFactory = $this->container->get(DocBlockFactory::class);
     }
 
-    public function test(): void
+    public function test()
     {
         $classWithSeeAnnotation = ReflectionClass::createFromName(ClassWithSeeAnnotation::class);
 

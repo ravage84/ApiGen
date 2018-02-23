@@ -16,7 +16,7 @@ final class AnnotationGroupsGeneratorTest extends AbstractContainerAwareTestCase
      */
     private $annotationGroupsGenerator;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         /** @var Configuration $configuration */
         $configuration = $this->container->get(Configuration::class);
@@ -32,7 +32,7 @@ final class AnnotationGroupsGeneratorTest extends AbstractContainerAwareTestCase
         $this->annotationGroupsGenerator = $this->container->get(AnnotationGroupsGenerator::class);
     }
 
-    public function testGenerate(): void
+    public function testGenerate()
     {
         $this->annotationGroupsGenerator->generate();
 

@@ -20,7 +20,7 @@ final class ObjectClassTest extends AbstractContainerAwareTestCase
      */
     private $reflectionStorage;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->parser = $this->container->get(Parser::class);
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
@@ -28,7 +28,7 @@ final class ObjectClassTest extends AbstractContainerAwareTestCase
         $this->reflectionStorage = $this->container->get(ReflectionStorage::class);
     }
 
-    public function testDirect(): void
+    public function testDirect()
     {
         $classReflections = $this->reflectionStorage->getClassReflections();
         $this->assertCount(4, $classReflections);
@@ -37,7 +37,7 @@ final class ObjectClassTest extends AbstractContainerAwareTestCase
         $this->assertSame(Object::class, $classReflections[Object::class]->getName());
     }
 
-    public function testGetParent(): void
+    public function testGetParent()
     {
         $classReflections = $this->reflectionStorage->getClassReflections();
 

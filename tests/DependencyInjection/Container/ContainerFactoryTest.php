@@ -14,12 +14,12 @@ final class ContainerFactoryTest extends TestCase
      */
     private $container;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->container = (new ContainerFactory)->create();
     }
 
-    public function test(): void
+    public function test()
     {
         $this->assertInstanceOf(Container::class, $this->container);
         $this->assertInstanceOf(ApiGenApplication::class, $this->container->get(ApiGenApplication::class));

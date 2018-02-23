@@ -27,14 +27,14 @@ final class ProgressBar
         $this->output = $output;
     }
 
-    public function init(int $maximum = 1): void
+    public function init(int $maximum = 1)
     {
         $this->bar = new ProgressBarHelper($this->output, $maximum);
         $this->bar->setFormat(self::BAR_FORMAT);
         $this->bar->start();
     }
 
-    public function increment(int $increment = 1): void
+    public function increment(int $increment = 1)
     {
         if ($this->bar === null) {
             return;

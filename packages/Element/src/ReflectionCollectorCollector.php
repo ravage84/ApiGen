@@ -13,12 +13,12 @@ final class ReflectionCollectorCollector
      */
     private $reflectionCollectors = [];
 
-    public function addReflectionCollector(BasicReflectionCollectorInterface $reflectionCollector): void
+    public function addReflectionCollector(BasicReflectionCollectorInterface $reflectionCollector)
     {
         $this->reflectionCollectors[] = $reflectionCollector;
     }
 
-    public function processReflection(AbstractReflectionInterface $reflection): void
+    public function processReflection(AbstractReflectionInterface $reflection)
     {
         foreach ($this->reflectionCollectors as $reflectionCollector) {
             $reflectionCollector->processReflection($reflection);

@@ -67,7 +67,7 @@ final class SourceOption implements CommandArgumentInterface
     /**
      * @param string[] $sources
      */
-    private function ensureSourcesExist(array $sources): void
+    private function ensureSourcesExist(array $sources)
     {
         foreach ($sources as $source) {
             if (! file_exists($source)) {

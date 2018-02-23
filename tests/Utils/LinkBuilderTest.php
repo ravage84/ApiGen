@@ -13,7 +13,7 @@ final class LinkBuilderTest extends TestCase
      */
     private $linkBuilder;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->linkBuilder = new LinkBuilder;
     }
@@ -23,7 +23,7 @@ final class LinkBuilderTest extends TestCase
      *
      * @param string[] $classes
      */
-    public function testBuild(string $url, string $text, bool $escape, array $classes, string $expectedLink): void
+    public function testBuild(string $url, string $text, bool $escape, array $classes, string $expectedLink)
     {
         $this->assertSame($expectedLink, $this->linkBuilder->build($url, $text, $escape, $classes));
     }

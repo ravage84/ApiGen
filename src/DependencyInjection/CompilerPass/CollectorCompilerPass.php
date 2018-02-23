@@ -28,7 +28,7 @@ use Symplify\PackageBuilder\Adapter\Symfony\DependencyInjection\DefinitionCollec
 
 final class CollectorCompilerPass implements CompilerPassInterface
 {
-    public function process(ContainerBuilder $containerBuilder): void
+    public function process(ContainerBuilder $containerBuilder)
     {
         $this->collectCommandsToApplication($containerBuilder);
         $this->collectOptionsToCommandDecorator($containerBuilder);
@@ -42,7 +42,7 @@ final class CollectorCompilerPass implements CompilerPassInterface
         $this->collectFilterProvidersToLatteEngine($containerBuilder);
     }
 
-    private function collectCommandsToApplication(ContainerBuilder $containerBuilder): void
+    private function collectCommandsToApplication(ContainerBuilder $containerBuilder)
     {
         DefinitionCollector::loadCollectorWithType(
             $containerBuilder,
@@ -52,7 +52,7 @@ final class CollectorCompilerPass implements CompilerPassInterface
         );
     }
 
-    private function collectOptionsToCommandDecorator(ContainerBuilder $containerBuilder): void
+    private function collectOptionsToCommandDecorator(ContainerBuilder $containerBuilder)
     {
         DefinitionCollector::loadCollectorWithType(
             $containerBuilder,
@@ -62,7 +62,7 @@ final class CollectorCompilerPass implements CompilerPassInterface
         );
     }
 
-    private function collectOptionsToConfigurationResolver(ContainerBuilder $containerBuilder): void
+    private function collectOptionsToConfigurationResolver(ContainerBuilder $containerBuilder)
     {
         DefinitionCollector::loadCollectorWithType(
             $containerBuilder,
@@ -72,7 +72,7 @@ final class CollectorCompilerPass implements CompilerPassInterface
         );
     }
 
-    private function collectTransformersToTransformerCollector(ContainerBuilder $containerBuilder): void
+    private function collectTransformersToTransformerCollector(ContainerBuilder $containerBuilder)
     {
         DefinitionCollector::loadCollectorWithType(
             $containerBuilder,
@@ -82,7 +82,7 @@ final class CollectorCompilerPass implements CompilerPassInterface
         );
     }
 
-    private function collectReflectionCollectorsToReflectionCollectorCollector(ContainerBuilder $containerBuilder): void
+    private function collectReflectionCollectorsToReflectionCollectorCollector(ContainerBuilder $containerBuilder)
     {
         DefinitionCollector::loadCollectorWithType(
             $containerBuilder,
@@ -92,7 +92,7 @@ final class CollectorCompilerPass implements CompilerPassInterface
         );
     }
 
-    private function collectAnnotationSubscribersToAnnotationDecorator(ContainerBuilder $containerBuilder): void
+    private function collectAnnotationSubscribersToAnnotationDecorator(ContainerBuilder $containerBuilder)
     {
         DefinitionCollector::loadCollectorWithType(
             $containerBuilder,
@@ -102,7 +102,7 @@ final class CollectorCompilerPass implements CompilerPassInterface
         );
     }
 
-    private function collectRoutesToStringRouter(ContainerBuilder $containerBuilder): void
+    private function collectRoutesToStringRouter(ContainerBuilder $containerBuilder)
     {
         DefinitionCollector::loadCollectorWithType(
             $containerBuilder,
@@ -112,7 +112,7 @@ final class CollectorCompilerPass implements CompilerPassInterface
         );
     }
 
-    private function collectEventSubscribersToDispatcher(ContainerBuilder $containerBuilder): void
+    private function collectEventSubscribersToDispatcher(ContainerBuilder $containerBuilder)
     {
         DefinitionCollector::loadCollectorWithType(
             $containerBuilder,
@@ -122,7 +122,7 @@ final class CollectorCompilerPass implements CompilerPassInterface
         );
     }
 
-    private function collectGeneratorsToGeneratorQueue(ContainerBuilder $containerBuilder): void
+    private function collectGeneratorsToGeneratorQueue(ContainerBuilder $containerBuilder)
     {
         DefinitionCollector::loadCollectorWithType(
             $containerBuilder,
@@ -132,7 +132,7 @@ final class CollectorCompilerPass implements CompilerPassInterface
         );
     }
 
-    private function collectFilterProvidersToLatteEngine(ContainerBuilder $containerBuilder): void
+    private function collectFilterProvidersToLatteEngine(ContainerBuilder $containerBuilder)
     {
         DefinitionCollector::loadCollectorWithType(
             $containerBuilder,

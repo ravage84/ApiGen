@@ -25,12 +25,12 @@ final class ReflectionRouteTest extends AbstractContainerAwareTestCase
      */
     private $stringRouter;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->stringRouter = $this->container->get(StringRouter::class);
     }
 
-    public function testWebalize(): void
+    public function testWebalize()
     {
         $reflectionClassMock = $this->createMock(ClassReflectionInterface::class);
         $reflectionClassMock->method('getName')
@@ -45,7 +45,7 @@ final class ReflectionRouteTest extends AbstractContainerAwareTestCase
     /**
      * @dataProvider provideDataForBuildRoute
      */
-    public function testBasicReflection(string $reflectionInterface, string $expectedUrl): void
+    public function testBasicReflection(string $reflectionInterface, string $expectedUrl)
     {
         $reflectionClassMock = $this->createMock($reflectionInterface);
         $reflectionClassMock->method('getName')
@@ -69,7 +69,7 @@ final class ReflectionRouteTest extends AbstractContainerAwareTestCase
         ];
     }
 
-    public function testExceptionReflection(): void
+    public function testExceptionReflection()
     {
         $reflectionExceptionMock = $this->createMock(ClassReflectionInterface::class);
         $reflectionExceptionMock->method('implementsInterface')
@@ -84,7 +84,7 @@ final class ReflectionRouteTest extends AbstractContainerAwareTestCase
         );
     }
 
-    public function testFunctionUrl(): void
+    public function testFunctionUrl()
     {
         $reflectionFunctionMock = $this->createMock(FunctionReflectionInterface::class);
         $reflectionFunctionMock->method('getName')
@@ -99,7 +99,7 @@ final class ReflectionRouteTest extends AbstractContainerAwareTestCase
     /**
      * @dataProvider provideDataForBuilderClassElementRoute
      */
-    public function testClassElements(string $reflectionInterface, string $expectedUrl): void
+    public function testClassElements(string $reflectionInterface, string $expectedUrl)
     {
         $reflectionMethodMock = $this->createMock($reflectionInterface);
         $reflectionMethodMock->method('getDeclaringClassName')
@@ -128,7 +128,7 @@ final class ReflectionRouteTest extends AbstractContainerAwareTestCase
     /**
      * @dataProvider provideDataForBuilderInterfaceElementRoute
      */
-    public function testInterfaceElements(string $reflectionInterface, string $expectedUrl): void
+    public function testInterfaceElements(string $reflectionInterface, string $expectedUrl)
     {
         $reflectionMock = $this->createMock($reflectionInterface);
         $reflectionMock->method('getDeclaringInterfaceName')
@@ -153,7 +153,7 @@ final class ReflectionRouteTest extends AbstractContainerAwareTestCase
     /**
      * @dataProvider provideDataForBuilderTraitElementRoute
      */
-    public function testTraitElements(string $reflectionInterface, string $expectedUrl): void
+    public function testTraitElements(string $reflectionInterface, string $expectedUrl)
     {
         $reflectionMock = $this->createMock($reflectionInterface);
         $reflectionMock->method('getDeclaringTraitName')

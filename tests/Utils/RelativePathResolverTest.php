@@ -21,13 +21,13 @@ final class RelativePathResolverTest extends AbstractContainerAwareTestCase
      */
     private $relativePathResolver;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->configuration = $this->container->get(Configuration::class);
         $this->relativePathResolver = $this->container->get(RelativePathResolver::class);
     }
 
-    public function testGetRelativePath(): void
+    public function testGetRelativePath()
     {
         $this->configuration->resolveOptions([
             DestinationOption::NAME => TEMP_DIR,
@@ -43,7 +43,7 @@ final class RelativePathResolverTest extends AbstractContainerAwareTestCase
         );
     }
 
-    public function testGetRelativePathInvalid(): void
+    public function testGetRelativePathInvalid()
     {
         $this->configuration->resolveOptions([
             DestinationOption::NAME => TEMP_DIR,

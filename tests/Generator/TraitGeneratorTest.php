@@ -13,7 +13,7 @@ final class TraitGeneratorTest extends AbstractContainerAwareTestCase
      */
     private $traitGenerator;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         /** @var Parser $parser */
         $parser = $this->container->get(Parser::class);
@@ -22,7 +22,7 @@ final class TraitGeneratorTest extends AbstractContainerAwareTestCase
         $this->traitGenerator = $this->container->get(TraitGenerator::class);
     }
 
-    public function test(): void
+    public function test()
     {
         $this->traitGenerator->generate();
         $this->assertFileExists(

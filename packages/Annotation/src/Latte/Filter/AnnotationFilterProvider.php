@@ -68,7 +68,7 @@ final class AnnotationFilterProvider implements FilterProviderInterface
     /**
      * @param mixed[] $annotations
      */
-    private function ensureFilterArgumentsIsTag(array $annotations, string $filterName): void
+    private function ensureFilterArgumentsIsTag(array $annotations, string $filterName)
     {
         foreach ($annotations as $annotation) {
             if ($annotation instanceof Tag) {

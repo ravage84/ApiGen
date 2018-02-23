@@ -43,7 +43,7 @@ final class ClassGenerator implements GeneratorInterface
         $this->templateRenderer = $templateRenderer;
     }
 
-    public function generate(): void
+    public function generate()
     {
         foreach ($this->reflectionStorage->getClassReflections() as $classReflection) {
             $this->generateForClass($classReflection);
@@ -53,7 +53,7 @@ final class ClassGenerator implements GeneratorInterface
         }
     }
 
-    private function generateForClass(ClassReflectionInterface $classReflection): void
+    private function generateForClass(ClassReflectionInterface $classReflection)
     {
         $this->templateRenderer->renderToFile(
             $this->configuration->getTemplateByName('class'),
@@ -65,7 +65,7 @@ final class ClassGenerator implements GeneratorInterface
         );
     }
 
-    private function generateSourceCodeForClass(ClassReflectionInterface $classReflection): void
+    private function generateSourceCodeForClass(ClassReflectionInterface $classReflection)
     {
         $content = file_get_contents($classReflection->getFileName());
         $highlightedContent = $this->sourceCodeHighlighter->highlightAndAddLineNumbers($content);

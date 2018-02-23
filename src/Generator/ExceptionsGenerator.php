@@ -39,7 +39,7 @@ final class ExceptionsGenerator implements GeneratorInterface
         $this->reflectionStorage = $reflectionStorage;
     }
 
-    public function generate(): void
+    public function generate()
     {
         if (count($this->reflectionStorage->getExceptionReflections()) < 1) {
             return;

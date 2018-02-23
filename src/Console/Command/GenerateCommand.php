@@ -45,7 +45,7 @@ final class GenerateCommand extends Command
         parent::__construct();
     }
 
-    protected function configure(): void
+    protected function configure()
     {
         $this->setName(self::NAME);
         $this->setDescription('Generate API documentation');
@@ -63,7 +63,7 @@ final class GenerateCommand extends Command
         return 0;
     }
 
-    private function ensureDestinationIsSet(InputInterface $input): void
+    private function ensureDestinationIsSet(InputInterface $input)
     {
         $this->configurationResolver->resolveValue(DestinationOption::NAME, $input->getOption(DestinationOption::NAME));
     }

@@ -18,7 +18,7 @@ final class ParentResolvingTest extends AbstractContainerAwareTestCase
      */
     private $reflectionStorage;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         /** @var Parser $parser */
         $parser = $this->container->get(Parser::class);
@@ -27,7 +27,7 @@ final class ParentResolvingTest extends AbstractContainerAwareTestCase
         $this->reflectionStorage = $this->container->get(ReflectionStorage::class);
     }
 
-    public function testClasses(): void
+    public function testClasses()
     {
         $allClasses = $this->reflectionStorage->getClassReflections();
         $this->assertCount(2, $allClasses);
@@ -35,7 +35,7 @@ final class ParentResolvingTest extends AbstractContainerAwareTestCase
         $this->assertArrayHasKey(ExtendingClass::class, $allClasses);
     }
 
-    public function testInterfaces(): void
+    public function testInterfaces()
     {
         $allInterfaces = $this->reflectionStorage->getInterfaceReflections();
         $this->assertArrayHasKey(SomeInterface::class, $allInterfaces);
@@ -43,7 +43,7 @@ final class ParentResolvingTest extends AbstractContainerAwareTestCase
         $this->assertCount(2, $allInterfaces);
     }
 
-    public function testTraits(): void
+    public function testTraits()
     {
         $allTraits = $this->reflectionStorage->getTraitReflections();
         $this->assertArrayHasKey(ExtendingTrait::class, $allTraits);

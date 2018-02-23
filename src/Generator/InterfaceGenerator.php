@@ -43,7 +43,7 @@ final class InterfaceGenerator implements GeneratorInterface
         $this->templateRenderer = $templateRenderer;
     }
 
-    public function generate(): void
+    public function generate()
     {
         foreach ($this->reflectionStorage->getInterfaceReflections() as $interfaceReflection) {
             $this->generateForInterface($interfaceReflection);
@@ -53,7 +53,7 @@ final class InterfaceGenerator implements GeneratorInterface
         }
     }
 
-    private function generateForInterface(InterfaceReflectionInterface $interfaceReflection): void
+    private function generateForInterface(InterfaceReflectionInterface $interfaceReflection)
     {
         $this->templateRenderer->renderToFile(
             $this->configuration->getTemplateByName('interface'),
@@ -65,7 +65,7 @@ final class InterfaceGenerator implements GeneratorInterface
         );
     }
 
-    private function generateSourceCodeForInterface(InterfaceReflectionInterface $interfaceReflection): void
+    private function generateSourceCodeForInterface(InterfaceReflectionInterface $interfaceReflection)
     {
         $content = file_get_contents($interfaceReflection->getFileName());
         $highlightedContent = $this->sourceCodeHighlighter->highlightAndAddLineNumbers($content);

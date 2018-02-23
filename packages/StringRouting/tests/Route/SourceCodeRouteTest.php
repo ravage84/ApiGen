@@ -27,7 +27,7 @@ final class SourceCodeRouteTest extends AbstractContainerAwareTestCase
      */
     private $stringRouter;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->stringRouter = $this->container->get(StringRouter::class);
         /** @var Configuration $configuration */
@@ -38,7 +38,7 @@ final class SourceCodeRouteTest extends AbstractContainerAwareTestCase
         ]);
     }
 
-    public function testWebalize(): void
+    public function testWebalize()
     {
         $reflectionClassMock = $this->createMock(ClassReflectionInterface::class);
         $reflectionClassMock->method('getName')
@@ -53,7 +53,7 @@ final class SourceCodeRouteTest extends AbstractContainerAwareTestCase
     /**
      * @dataProvider provideDataForBuildRoute
      */
-    public function testBasicReflection(string $reflectionInterface, string $expectedUrl): void
+    public function testBasicReflection(string $reflectionInterface, string $expectedUrl)
     {
         $reflectionMock = $this->createMock($reflectionInterface);
         $reflectionMock->method('getName')
@@ -77,7 +77,7 @@ final class SourceCodeRouteTest extends AbstractContainerAwareTestCase
     /**
      * @dataProvider provideDataForBuildLinedRoute
      */
-    public function testLinedReflection(string $reflectionInterface, string $expectedUrl): void
+    public function testLinedReflection(string $reflectionInterface, string $expectedUrl)
     {
         $reflectionMock = $this->createMock($reflectionInterface);
         $reflectionMock->method('getName')
@@ -105,7 +105,7 @@ final class SourceCodeRouteTest extends AbstractContainerAwareTestCase
     /**
      * @dataProvider provideDataForBuilderClassElementRoute
      */
-    public function testClassElements(string $reflectionInterface, string $expectedUrl): void
+    public function testClassElements(string $reflectionInterface, string $expectedUrl)
     {
         $reflectionMock = $this->createMock($reflectionInterface);
         $reflectionMock->method('getDeclaringClassName')
@@ -133,7 +133,7 @@ final class SourceCodeRouteTest extends AbstractContainerAwareTestCase
     /**
      * @dataProvider provideDataForBuilderInterfaceElementRoute
      */
-    public function testInterfaceElements(string $reflectionInterface, string $expectedUrl): void
+    public function testInterfaceElements(string $reflectionInterface, string $expectedUrl)
     {
         $reflectionMock = $this->createMock($reflectionInterface);
         $reflectionMock->method('getDeclaringInterfaceName')
@@ -160,7 +160,7 @@ final class SourceCodeRouteTest extends AbstractContainerAwareTestCase
     /**
      * @dataProvider provideDataForBuilderTraitElementRoute
      */
-    public function testTraitElements(string $reflectionInterface, string $expectedUrl): void
+    public function testTraitElements(string $reflectionInterface, string $expectedUrl)
     {
         $reflectionMock = $this->createMock($reflectionInterface);
         $reflectionMock->method('getDeclaringTraitName')

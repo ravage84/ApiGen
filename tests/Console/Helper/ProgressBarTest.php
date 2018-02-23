@@ -15,12 +15,12 @@ final class ProgressBarTest extends TestCase
      */
     private $progressBar;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->progressBar = new ProgressBar(new NullOutput);
     }
 
-    public function testInit(): void
+    public function testInit()
     {
         $this->assertNull(Assert::readAttribute($this->progressBar, 'bar'));
 
@@ -32,7 +32,7 @@ final class ProgressBarTest extends TestCase
         $this->assertSame(50, $bar->getMaxSteps());
     }
 
-    public function testIncrement(): void
+    public function testIncrement()
     {
         $this->progressBar->increment();
 

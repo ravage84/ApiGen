@@ -8,7 +8,7 @@ use ApiGen\Tests\AbstractContainerAwareTestCase;
 
 final class InterfacesGeneratorTest extends AbstractContainerAwareTestCase
 {
-    public function test(): void
+    public function test()
     {
         /** @var Parser $parser */
         $parser = $this->container->get(Parser::class);

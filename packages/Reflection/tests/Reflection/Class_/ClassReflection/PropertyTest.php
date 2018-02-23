@@ -7,7 +7,7 @@ use InvalidArgumentException;
 
 final class PropertyTest extends AbstractReflectionClassTestCase
 {
-    public function testGetProperty(): void
+    public function testGetProperty()
     {
         $this->assertInstanceOf(
             ClassPropertyReflectionInterface::class,
@@ -15,23 +15,23 @@ final class PropertyTest extends AbstractReflectionClassTestCase
         );
     }
 
-    public function testGetPropertyNonExisting(): void
+    public function testGetPropertyNonExisting()
     {
         $this->expectException(InvalidArgumentException::class);
         $this->reflectionClass->getProperty('notPresentProperty');
     }
 
-    public function testGetProperties(): void
+    public function testGetProperties()
     {
         $this->assertCount(4, $this->reflectionClass->getProperties());
     }
 
-    public function testGetOwnProperties(): void
+    public function testGetOwnProperties()
     {
         $this->assertCount(2, $this->reflectionClass->getOwnProperties());
     }
 
-    public function testGetInheritedProperties(): void
+    public function testGetInheritedProperties()
     {
         $this->assertCount(1, $this->reflectionClass->getInheritedProperties());
     }

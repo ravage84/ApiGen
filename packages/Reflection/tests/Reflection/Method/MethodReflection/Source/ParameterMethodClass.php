@@ -16,15 +16,15 @@ class ParameterMethodClass
      * @param mixed $data and array or a blob of data to be sent
      * @param mixed[] $headers add optional headers
      */
-    public function methodWithArgs($url = 1, $data = null, $headers = []): void
+    public function methodWithArgs($url = 1, $data = null, $headers = [])
     {
     }
 
-    public function methodWithClassParameter(ParameterClass $parameterClass): void
+    public function methodWithClassParameter(ParameterClass $parameterClass)
     {
     }
 
-    public function methodWithConstantDefaultValue(string $where = self::HERE, string $when = Time::TODAY): void
+    public function methodWithConstantDefaultValue(string $where = self::HERE, string $when = Time::TODAY)
     {
     }
 }

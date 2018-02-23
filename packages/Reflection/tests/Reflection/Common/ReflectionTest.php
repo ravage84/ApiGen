@@ -13,29 +13,29 @@ final class ReflectionTest extends AbstractParserAwareTestCase
      */
     private $reflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
         $this->reflection = $this->reflectionStorage->getClassReflections()[CommonReflection::class];
     }
 
-    public function testGetName(): void
+    public function testGetName()
     {
         $this->assertSame(CommonReflection::class, $this->reflection->getName());
     }
 
-    public function testGetFileName(): void
+    public function testGetFileName()
     {
         $this->assertSame(__DIR__ . '/Source/CommonReflection.php', $this->reflection->getFileName());
     }
 
-    public function testClassConstant(): void
+    public function testClassConstant()
     {
         $methodReflection = $this->reflection->getMethods()['getClass'];
         $this->assertFalse($methodReflection->returnsReference());
     }
 
-    public function testBetterReflectionsConstantsParsing(): void
+    public function testBetterReflectionsConstantsParsing()
     {
         $constants = $this->reflection->getConstants();
         $this->assertCount(2, $constants);

@@ -35,7 +35,7 @@ final class AnnotationReflectionCollector implements AdvancedReflectionCollector
         $this->configuration = $configuration;
     }
 
-    public function processReflection(AbstractReflectionInterface $reflection): void
+    public function processReflection(AbstractReflectionInterface $reflection)
     {
         if (! $reflection instanceof AnnotationsInterface) {
             return;

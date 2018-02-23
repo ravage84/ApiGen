@@ -19,7 +19,7 @@ final class PartiallyDeprecatedClass
     /**
      * @deprecated
      */
-    public function daily(): void
+    public function daily()
     {
     }
 }

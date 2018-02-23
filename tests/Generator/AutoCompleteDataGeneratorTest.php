@@ -8,7 +8,7 @@ use ApiGen\Tests\AbstractContainerAwareTestCase;
 
 final class AutoCompleteDataGeneratorTest extends AbstractContainerAwareTestCase
 {
-    public function test(): void
+    public function test()
     {
         $parser = $this->container->get(Parser::class);
         $parser->parseFilesAndDirectories([__DIR__ . '/Source']);

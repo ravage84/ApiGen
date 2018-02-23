@@ -28,7 +28,7 @@ abstract class AbstractReflectionClassTestCase extends AbstractContainerAwareTes
      */
     protected $interfaceReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         /** @var Parser $parser */
         $parser = $this->container->get(Parser::class);

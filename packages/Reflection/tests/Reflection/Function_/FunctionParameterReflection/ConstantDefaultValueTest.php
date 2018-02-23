@@ -17,7 +17,7 @@ final class ConstantDefaultValueTest extends AbstractParserAwareTestCase
      */
     private $functionParameterReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
 
@@ -27,7 +27,7 @@ final class ConstantDefaultValueTest extends AbstractParserAwareTestCase
         $this->functionParameterReflection = $functionReflection->getParameters()['hello'];
     }
 
-    public function testType(): void
+    public function testType()
     {
         $this->assertSame('int', $this->functionParameterReflection->getTypeHint());
         // @todo - fix it after constant dump is fixed

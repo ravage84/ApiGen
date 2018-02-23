@@ -14,7 +14,7 @@ final class ClassTypeHintPropertyTest extends AbstractParserAwareTestCase
      */
     private $propertyReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
 
@@ -23,7 +23,7 @@ final class ClassTypeHintPropertyTest extends AbstractParserAwareTestCase
         $this->propertyReflection = $classReflection->getProperty('propertyOfClassType');
     }
 
-    public function testGetTypeHint(): void
+    public function testGetTypeHint()
     {
         $this->assertSame(PropertyOfClassType::class, $this->propertyReflection->getTypeHint());
 

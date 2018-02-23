@@ -12,7 +12,7 @@ final class DefaultValueDumperTest extends TestCase
      */
     private $defaultValueDumper;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->defaultValueDumper = new DefaultValueDumper;
     }
@@ -22,7 +22,7 @@ final class DefaultValueDumperTest extends TestCase
      *
      * @param mixed
      */
-    public function testDump($value, string $expected): void
+    public function testDump($value, string $expected)
     {
         $this->assertSame($expected, $this->defaultValueDumper->dumpValue($value));
     }

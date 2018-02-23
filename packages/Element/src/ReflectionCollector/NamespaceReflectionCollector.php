@@ -32,7 +32,7 @@ final class NamespaceReflectionCollector implements BasicReflectionCollectorInte
     /**
      * @param InNamespaceInterface|AbstractReflectionInterface $reflection
      */
-    public function processReflection(AbstractReflectionInterface $reflection): void
+    public function processReflection(AbstractReflectionInterface $reflection)
     {
         if (! is_a($reflection, InNamespaceInterface::class)) {
             return;

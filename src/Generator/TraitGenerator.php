@@ -43,7 +43,7 @@ final class TraitGenerator implements GeneratorInterface
         $this->templateRenderer = $templateRenderer;
     }
 
-    public function generate(): void
+    public function generate()
     {
         foreach ($this->reflectionStorage->getTraitReflections() as $traitReflection) {
             $this->generateForTrait($traitReflection);
@@ -53,7 +53,7 @@ final class TraitGenerator implements GeneratorInterface
         }
     }
 
-    private function generateForTrait(TraitReflectionInterface $traitReflection): void
+    private function generateForTrait(TraitReflectionInterface $traitReflection)
     {
         $this->templateRenderer->renderToFile(
             $this->configuration->getTemplateByName('trait'),
@@ -65,7 +65,7 @@ final class TraitGenerator implements GeneratorInterface
         );
     }
 
-    private function generateSourceCodeForTrait(TraitReflectionInterface $traitReflection): void
+    private function generateSourceCodeForTrait(TraitReflectionInterface $traitReflection)
     {
         $content = file_get_contents($traitReflection->getFileName());
         $highlightedContent = $this->sourceCodeHighlighter->highlightAndAddLineNumbers($content);

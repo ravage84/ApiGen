@@ -40,7 +40,7 @@ final class ProcessDocTextEvent extends Event
         return $this->reflection;
     }
 
-    public function changeText(string $text): void
+    public function changeText(string $text)
     {
         $this->text = $text;
     }

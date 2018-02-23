@@ -14,18 +14,18 @@ final class InheritTest extends AbstractParserAwareTestCase
      */
     private $classReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
         $this->classReflection = $this->reflectionStorage->getClassReflections()[InheritdocClass::class];
     }
 
-    public function testClassDescription(): void
+    public function testClassDescription()
     {
         $this->assertSame('Some interface description.', $this->classReflection->getDescription());
     }
 
-    public function testMethodDescription(): void
+    public function testMethodDescription()
     {
         $methodReflection = $this->classReflection->getMethods()['methodWithInherit'];
         $this->assertSame('Some interface method description.', $methodReflection->getDescription());

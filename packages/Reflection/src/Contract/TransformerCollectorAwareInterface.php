@@ -6,5 +6,5 @@ use ApiGen\Reflection\TransformerCollector;
 
 interface TransformerCollectorAwareInterface
 {
-    public function setTransformerCollector(TransformerCollector $transformerCollector): void;
+    public function setTransformerCollector(TransformerCollector $transformerCollector);
 }

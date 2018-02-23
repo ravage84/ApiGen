@@ -9,5 +9,5 @@ interface PoorInterface
      */
     public const HOPE = 'do';
 
-    public function riseAndShine(): void;
+    public function riseAndShine();
 }

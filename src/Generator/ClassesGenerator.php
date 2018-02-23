@@ -39,7 +39,7 @@ final class ClassesGenerator implements GeneratorInterface
         $this->reflectionStorage = $reflectionStorage;
     }
 
-    public function generate(): void
+    public function generate()
     {
         if (count($this->reflectionStorage->getClassReflections()) < 1) {
             return;

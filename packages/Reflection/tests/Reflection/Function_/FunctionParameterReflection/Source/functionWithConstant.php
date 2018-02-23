@@ -4,6 +4,6 @@ namespace ApiGen\Reflection\Tests\Reflection\Function_\FunctionParameterReflecti
 
 const HI = 5;
 
-function functionWithConstant(int $hello = HI): void
+function functionWithConstant(int $hello = HI)
 {
 }

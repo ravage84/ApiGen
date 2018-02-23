@@ -51,7 +51,7 @@ final class FunctionGenerator implements GeneratorInterface
         $this->relativePathResolver = $relativePathResolver;
     }
 
-    public function generate(): void
+    public function generate()
     {
         foreach ($this->reflectionStorage->getFunctionReflections() as $functionReflection) {
             $this->generateForFunction($functionReflection);
@@ -61,7 +61,7 @@ final class FunctionGenerator implements GeneratorInterface
         }
     }
 
-    private function generateForFunction(FunctionReflectionInterface $reflectionFunction): void
+    private function generateForFunction(FunctionReflectionInterface $reflectionFunction)
     {
         $this->templateRenderer->renderToFile(
             $this->configuration->getTemplateByName('function'),
@@ -73,7 +73,7 @@ final class FunctionGenerator implements GeneratorInterface
         );
     }
 
-    private function generateSourceCodeForFunction(FunctionReflectionInterface $functionReflection): void
+    private function generateSourceCodeForFunction(FunctionReflectionInterface $functionReflection)
     {
         $content = file_get_contents($functionReflection->getFileName());
         $highlightedContent = $this->sourceCodeHighlighter->highlightAndAddLineNumbers($content);

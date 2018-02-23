@@ -2,13 +2,13 @@
 
 namespace ApiGen\Tests\Generator\Source;
 
-function someFunction(): void
+function someFunction()
 {
 }
 
 /**
  * Do not add param annotations here!
  */
-function someOtherFunction($paramWithoutTypeHint): void
+function someOtherFunction($paramWithoutTypeHint)
 {
 }

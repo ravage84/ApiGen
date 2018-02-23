@@ -18,7 +18,7 @@ final class NamespaceReflectionCollectorTest extends AbstractContainerAwareTestC
      */
     private $namespaceReflectionCollector;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         /** @var Parser $parser */
         $parser = $this->container->get(Parser::class);
@@ -27,7 +27,7 @@ final class NamespaceReflectionCollectorTest extends AbstractContainerAwareTestC
         $this->namespaceReflectionCollector = $this->container->get(NamespaceReflectionCollector::class);
     }
 
-    public function testSort(): void
+    public function testSort()
     {
         $namespaces = $this->namespaceReflectionCollector->getNamespaces();
         $this->assertCount(3, $namespaces);
@@ -39,7 +39,7 @@ final class NamespaceReflectionCollectorTest extends AbstractContainerAwareTestC
         ], $namespaces);
     }
 
-    public function testFetchFromNamespace(): void
+    public function testFetchFromNamespace()
     {
         $this->assertCount(1, $this->namespaceReflectionCollector->getClassReflections($this->namespacePrefix));
         $this->assertCount(0, $this->namespaceReflectionCollector->getTraitReflections($this->namespacePrefix));
@@ -53,7 +53,7 @@ final class NamespaceReflectionCollectorTest extends AbstractContainerAwareTestC
         $this->assertCount(1, $this->namespaceReflectionCollector->getInterfaceReflections($desiredNamespace));
     }
 
-    public function testNoneNamespace(): void
+    public function testNoneNamespace()
     {
         $this->assertCount(
             1,

@@ -12,7 +12,7 @@ final class ConfigurationResolver
      */
     private $options = [];
 
-    public function addOption(OptionInterface $option): void
+    public function addOption(OptionInterface $option)
     {
         $this->options[$option->getName()] = $option;
     }
@@ -47,7 +47,7 @@ final class ConfigurationResolver
         return $values;
     }
 
-    private function ensureOptionExists(string $name): void
+    private function ensureOptionExists(string $name)
     {
         if (! isset($this->options[$name])) {
             throw new ConfigurationException(sprintf(

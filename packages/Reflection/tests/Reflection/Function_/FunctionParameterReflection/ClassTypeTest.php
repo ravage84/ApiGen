@@ -18,7 +18,7 @@ final class ClassTypeTest extends AbstractParserAwareTestCase
      */
     private $functionParameterReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
 
@@ -28,7 +28,7 @@ final class ClassTypeTest extends AbstractParserAwareTestCase
         $this->functionParameterReflection = $functionReflection->getParameters()['splFileInfo'];
     }
 
-    public function testType(): void
+    public function testType()
     {
         $this->assertSame(SplFileInfo::class, $this->functionParameterReflection->getTypeHint());
     }

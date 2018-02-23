@@ -12,7 +12,7 @@ trait SomeTrait
     /**
      * Do not add param annotations here!
      */
-    public function functionWithoutParamAnnotations($paramWithoutTypeHint): void
+    public function functionWithoutParamAnnotations($paramWithoutTypeHint)
     {
     }
 }

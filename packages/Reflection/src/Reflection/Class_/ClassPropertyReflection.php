@@ -159,7 +159,7 @@ final class ClassPropertyReflection implements ClassPropertyReflectionInterface,
         return $this->hasAnnotation(AnnotationList::DEPRECATED);
     }
 
-    public function setTransformerCollector(TransformerCollector $transformerCollector): void
+    public function setTransformerCollector(TransformerCollector $transformerCollector)
     {
         $this->transformerCollector = $transformerCollector;
     }

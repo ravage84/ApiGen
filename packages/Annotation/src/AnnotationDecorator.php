@@ -16,7 +16,7 @@ final class AnnotationDecorator
      */
     private $annotationSubscribers = [];
 
-    public function addAnnotationSubscriber(AnnotationSubscriberInterface $annotationSubscriber): void
+    public function addAnnotationSubscriber(AnnotationSubscriberInterface $annotationSubscriber)
     {
         $this->annotationSubscribers[] = $annotationSubscriber;
     }

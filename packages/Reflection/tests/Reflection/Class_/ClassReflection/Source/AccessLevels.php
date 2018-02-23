@@ -26,19 +26,19 @@ final class AccessLevels extends ParentClass implements RichInterface
      */
     private $privateProperty;
 
-    public function publicMethod(): void
+    public function publicMethod()
     {
     }
 
-    public function getSomeStuff(): void
+    public function getSomeStuff()
     {
     }
 
-    protected function protectedMethod(): void
+    protected function protectedMethod()
     {
     }
 
-    private function privateMethod(): void
+    private function privateMethod()
     {
     }
 }

@@ -27,7 +27,7 @@ final class ClassReflectionTest extends AbstractParserAwareTestCase
      */
     private $internalClassSuccessorClassReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         // @var Parser $parser
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
@@ -37,19 +37,19 @@ final class ClassReflectionTest extends AbstractParserAwareTestCase
         $this->internalClassSuccessorClassReflection = $classReflections[SuccessorOfInternalClass::class];
     }
 
-    public function testInterface(): void
+    public function testInterface()
     {
         $this->assertInstanceOf(ClassReflectionInterface::class, $this->classReflection);
     }
 
-    public function testName(): void
+    public function testName()
     {
         $this->assertSame(SomeClass::class, $this->classReflection->getName());
         $this->assertSame('SomeClass', $this->classReflection->getShortName());
         $this->assertSame($this->namespacePrefix, $this->classReflection->getNamespaceName());
     }
 
-    public function testAnnotations(): void
+    public function testAnnotations()
     {
         $this->assertSame(
             'Huge and small.' . PHP_EOL . PHP_EOL . 'description.',
@@ -64,19 +64,19 @@ final class ClassReflectionTest extends AbstractParserAwareTestCase
         $this->assertCount(1, $this->classReflection->getAnnotations());
     }
 
-    public function testLines(): void
+    public function testLines()
     {
         $this->assertSame(12, $this->classReflection->getStartLine());
         $this->assertSame(22, $this->classReflection->getEndLine());
     }
 
-    public function testModifiers(): void
+    public function testModifiers()
     {
         $this->assertFalse($this->classReflection->isAbstract());
         $this->assertFalse($this->classReflection->isFinal());
     }
 
-    public function testFileName(): void
+    public function testFileName()
     {
         $this->assertSame(__DIR__ . '/Source/SomeClass.php', $this->classReflection->getFileName());
 

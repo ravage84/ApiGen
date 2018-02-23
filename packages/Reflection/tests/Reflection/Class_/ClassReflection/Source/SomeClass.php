@@ -16,7 +16,7 @@ class SomeClass extends ParentClass
      */
     public $someProperty;
 
-    public function someMethod(): void
+    public function someMethod()
     {
     }
 }

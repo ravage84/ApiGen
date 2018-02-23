@@ -31,7 +31,7 @@ final class AutocompleteElementsTest extends AbstractContainerAwareTestCase
      */
     private $reflectionStorage;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         /** @var Parser $parser */
         $parser = $this->container->get(Parser::class);
@@ -42,7 +42,7 @@ final class AutocompleteElementsTest extends AbstractContainerAwareTestCase
         $this->reflectionRoute = $this->container->get(ReflectionRoute::class);
     }
 
-    public function testCounts(): void
+    public function testCounts()
     {
         $autocompleteElements = $this->autocompleteElements->getElements();
         $this->assertCount(8, $autocompleteElements);
@@ -54,7 +54,7 @@ final class AutocompleteElementsTest extends AbstractContainerAwareTestCase
     /**
      * @dataProvider provideDataForLabelsTest
      */
-    public function testLabels(string $label): void
+    public function testLabels(string $label)
     {
         $autocompleteElements = $this->autocompleteElements->getElements();
 
@@ -85,7 +85,7 @@ final class AutocompleteElementsTest extends AbstractContainerAwareTestCase
         ];
     }
 
-    public function testFilePaths(): void
+    public function testFilePaths()
     {
         $classReflections = $this->reflectionStorage->getClassReflections();
         $autocompleteElements = $this->autocompleteElements->getElements();

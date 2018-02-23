@@ -7,7 +7,7 @@ class BaseClass
     use FirstTrait;
     use SecondTrait;
 
-    public function hey(): void
+    public function hey()
     {
         echo 'Hi';
     }

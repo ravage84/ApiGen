@@ -43,7 +43,7 @@ final class ExceptionGenerator implements GeneratorInterface
         $this->templateRenderer = $templateRenderer;
     }
 
-    public function generate(): void
+    public function generate()
     {
         foreach ($this->reflectionStorage->getExceptionReflections() as $exceptionReflection) {
             $this->generateForException($exceptionReflection);
@@ -53,7 +53,7 @@ final class ExceptionGenerator implements GeneratorInterface
         }
     }
 
-    private function generateForException(ClassReflectionInterface $exceptionReflection): void
+    private function generateForException(ClassReflectionInterface $exceptionReflection)
     {
         $this->templateRenderer->renderToFile(
             $this->configuration->getTemplateByName('class'),
@@ -65,7 +65,7 @@ final class ExceptionGenerator implements GeneratorInterface
         );
     }
 
-    private function generateSourceCodeForException(ClassReflectionInterface $exceptionReflection): void
+    private function generateSourceCodeForException(ClassReflectionInterface $exceptionReflection)
     {
         $content = file_get_contents($exceptionReflection->getFileName());
         $highlightedContent = $this->sourceCodeHighlighter->highlightAndAddLineNumbers($content);

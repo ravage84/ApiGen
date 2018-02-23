@@ -22,7 +22,7 @@ final class LinkAnnotationSubscriberTest extends AbstractParserAwareTestCase
      */
     private $classReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/LinkAnnotationSubscriberSource']);
         $this->annotationDecorator = $this->container->get(AnnotationDecorator::class);
@@ -30,7 +30,7 @@ final class LinkAnnotationSubscriberTest extends AbstractParserAwareTestCase
         $this->classReflection = $this->reflectionStorage->getClassReflections()[SomeClassWithLinkAnnotations::class];
     }
 
-    public function testReflectionAnnotation(): void
+    public function testReflectionAnnotation()
     {
         $linkAnnotation = $this->classReflection->getAnnotation(AnnotationList::LINK)[0];
         $decoratedAnnotation = $this->annotationDecorator->decorate($linkAnnotation, $this->classReflection);
@@ -41,7 +41,7 @@ final class LinkAnnotationSubscriberTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testSeeUrlAnnotation(): void
+    public function testSeeUrlAnnotation()
     {
         $seeUrlAnnotation = $this->classReflection->getAnnotation(AnnotationList::SEE)[0];
         $decoratedAnnotation = $this->annotationDecorator->decorate($seeUrlAnnotation, $this->classReflection);
@@ -55,7 +55,7 @@ final class LinkAnnotationSubscriberTest extends AbstractParserAwareTestCase
     /**
      * @dataProvider getLinkAnnotationData()
      */
-    public function testUrl(string $link, string $description, string $expectedOutput): void
+    public function testUrl(string $link, string $description, string $expectedOutput)
     {
         $linkAnnotation = new Link($link, $description ? new Description($description) : null);
 

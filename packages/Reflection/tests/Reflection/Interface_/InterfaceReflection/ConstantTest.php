@@ -15,7 +15,7 @@ final class ConstantTest extends AbstractParserAwareTestCase
      */
     private $interfaceReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
 
@@ -23,7 +23,7 @@ final class ConstantTest extends AbstractParserAwareTestCase
         $this->interfaceReflection = $interfaceReflections[SomeInterface::class];
     }
 
-    public function testGetConstants(): void
+    public function testGetConstants()
     {
         $ownConstants = $this->interfaceReflection->getOwnConstants();
         $this->assertCount(1, $ownConstants);
@@ -36,7 +36,7 @@ final class ConstantTest extends AbstractParserAwareTestCase
         $this->assertNotSame($ownConstants, $inheritedConstants);
     }
 
-    public function testGestConstant(): void
+    public function testGestConstant()
     {
         $this->assertFalse($this->interfaceReflection->hasConstant('missing'));
         $this->assertTrue($this->interfaceReflection->hasConstant('LAST'));
@@ -52,7 +52,7 @@ final class ConstantTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testMissingConstant(): void
+    public function testMissingConstant()
     {
         $this->expectException(Throwable::class);
         $this->interfaceReflection->getConstant('missing');

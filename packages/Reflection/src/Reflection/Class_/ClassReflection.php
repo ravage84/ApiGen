@@ -428,7 +428,7 @@ final class ClassReflection implements ClassReflectionInterface, TransformerColl
         );
     }
 
-    public function setTransformerCollector(TransformerCollector $transformerCollector): void
+    public function setTransformerCollector(TransformerCollector $transformerCollector)
     {
         $this->transformerCollector = $transformerCollector;
     }

@@ -54,9 +54,9 @@ final class ReflectionStorage
     /**
      * @param ClassReflectionInterface[] $classReflections
      */
-    public function addClassReflections(array $classReflections): void
+    public function addClassReflections(array $classReflections)
     {
-        array_walk($classReflections, function (ClassReflectionInterface $classReflection): void {
+        array_walk($classReflections, function (ClassReflectionInterface $classReflection) {
         });
         sort($classReflections);
         foreach ($classReflections as $classReflection) {
@@ -79,9 +79,9 @@ final class ReflectionStorage
     /**
      * @param InterfaceReflectionInterface[] $interfaceReflections
      */
-    public function addInterfaceReflections(array $interfaceReflections): void
+    public function addInterfaceReflections(array $interfaceReflections)
     {
-        array_walk($interfaceReflections, function (InterfaceReflectionInterface $interfaceReflection): void {
+        array_walk($interfaceReflections, function (InterfaceReflectionInterface $interfaceReflection) {
         });
         sort($interfaceReflections);
         foreach ($interfaceReflections as $interfaceReflection) {
@@ -100,9 +100,9 @@ final class ReflectionStorage
     /**
      * @param TraitReflectionInterface[] $traitReflections
      */
-    public function addTraitReflections(array $traitReflections): void
+    public function addTraitReflections(array $traitReflections)
     {
-        array_walk($traitReflections, function (TraitReflectionInterface $traitReflection): void {
+        array_walk($traitReflections, function (TraitReflectionInterface $traitReflection) {
         });
         sort($traitReflections);
         foreach ($traitReflections as $traitReflection) {
@@ -121,9 +121,9 @@ final class ReflectionStorage
     /**
      * @param FunctionReflectionInterface[] $functionReflections
      */
-    public function setFunctionReflections(array $functionReflections): void
+    public function setFunctionReflections(array $functionReflections)
     {
-        array_walk($functionReflections, function (FunctionReflectionInterface $functionReflection): void {
+        array_walk($functionReflections, function (FunctionReflectionInterface $functionReflection) {
         });
         sort($functionReflections);
 

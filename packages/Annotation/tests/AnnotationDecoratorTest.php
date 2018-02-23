@@ -30,7 +30,7 @@ final class AnnotationDecoratorTest extends AbstractParserAwareTestCase
      */
     private $secondMethodReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/AnnotationDecoratorSource']);
         $this->annotationDecorator = $this->container->get(AnnotationDecorator::class);
@@ -40,7 +40,7 @@ final class AnnotationDecoratorTest extends AbstractParserAwareTestCase
         $this->secondMethodReflection = $classReflection->getOwnMethods()['returnClass'];
     }
 
-    public function testClassArray(): void
+    public function testClassArray()
     {
         $returnAnnotation = $this->methodReflection->getAnnotation(AnnotationList::RETURN_)[0];
 
@@ -50,7 +50,7 @@ final class AnnotationDecoratorTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testReturnClass(): void
+    public function testReturnClass()
     {
         $returnAnnotation = $this->secondMethodReflection->getAnnotation(AnnotationList::RETURN_)[0];
 
@@ -60,7 +60,7 @@ final class AnnotationDecoratorTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testDoubleTypes(): void
+    public function testDoubleTypes()
     {
         $param1Annotation = $this->methodReflection->getAnnotation(AnnotationList::PARAM)[0];
 
@@ -70,7 +70,7 @@ final class AnnotationDecoratorTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testDoubleWithSelfReference(): void
+    public function testDoubleWithSelfReference()
     {
         $param2Annotation = $this->methodReflection->getAnnotation(AnnotationList::PARAM)[1];
 

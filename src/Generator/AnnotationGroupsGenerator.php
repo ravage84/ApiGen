@@ -34,14 +34,14 @@ final class AnnotationGroupsGenerator implements GeneratorInterface
         $this->annotationReflectionCollector = $annotationReflectionCollector;
     }
 
-    public function generate(): void
+    public function generate()
     {
         foreach ($this->configuration->getAnnotationGroups() as $annotation) {
             $this->generateForAnnotation($annotation);
         }
     }
 
-    private function generateForAnnotation(string $annotation): void
+    private function generateForAnnotation(string $annotation)
     {
         $this->templateRenderer->renderToFile(
             $this->configuration->getTemplateByName('annotation-group'),

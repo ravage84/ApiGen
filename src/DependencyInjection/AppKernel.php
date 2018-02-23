@@ -19,7 +19,7 @@ final class AppKernel extends Kernel
         parent::__construct('dev', true);
     }
 
-    public function registerContainerConfiguration(LoaderInterface $loader): void
+    public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load(__DIR__ . '/../config/services.yml');
 
@@ -47,7 +47,7 @@ final class AppKernel extends Kernel
         return sys_get_temp_dir() . '/_apigen_kernel_log';
     }
 
-    protected function build(ContainerBuilder $container): void
+    protected function build(ContainerBuilder $container)
     {
         $container->addCompilerPass(new CollectorCompilerPass);
     }

@@ -13,7 +13,7 @@ final class FunctionGeneratorTest extends AbstractContainerAwareTestCase
      */
     private $functionGenerator;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         /** @var Parser $parser */
         $parser = $this->container->get(Parser::class);
@@ -22,7 +22,7 @@ final class FunctionGeneratorTest extends AbstractContainerAwareTestCase
         $this->functionGenerator = $this->container->get(FunctionGenerator::class);
     }
 
-    public function test(): void
+    public function test()
     {
         $this->functionGenerator->generate();
         $this->assertFileExists(

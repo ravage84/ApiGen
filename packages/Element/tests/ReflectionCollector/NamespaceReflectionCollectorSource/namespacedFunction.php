@@ -2,6 +2,6 @@
 
 namespace ApiGen\Element\Tests\ReflectionCollector\NamespaceReflectionCollectorSource;
 
-function namespacedFunction(): void
+function namespacedFunction()
 {
 }

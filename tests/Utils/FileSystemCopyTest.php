@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 final class FileSystemCopyTest extends TestCase
 {
-    public function test(): void
+    public function test()
     {
         $fileSystem = new FileSystem;
         $fileSystem->copyDirectory(

@@ -39,7 +39,7 @@ final class SeeAnnotationSubscriberTest extends AbstractParserAwareTestCase
      */
     private $interfaceReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/SeeAnnotationSubscriberSource']);
         $this->annotationDecorator = $this->container->get(AnnotationDecorator::class);
@@ -54,7 +54,7 @@ final class SeeAnnotationSubscriberTest extends AbstractParserAwareTestCase
         ];
     }
 
-    public function testPropertyOnMissingClassReflection(): void
+    public function testPropertyOnMissingClassReflection()
     {
         $seePropertyAnnotation = $this->methodReflection->getAnnotation(AnnotationList::SEE)[0];
 
@@ -64,7 +64,7 @@ final class SeeAnnotationSubscriberTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testProperty(): void
+    public function testProperty()
     {
         $seePropertyAnnotation = $this->methodReflection->getAnnotation(AnnotationList::SEE)[2];
 
@@ -75,7 +75,7 @@ final class SeeAnnotationSubscriberTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testMethodOnMissingClassReflection(): void
+    public function testMethodOnMissingClassReflection()
     {
         $seeMethodAnnotation = $this->methodReflection->getAnnotation(AnnotationList::SEE)[1];
 
@@ -85,7 +85,7 @@ final class SeeAnnotationSubscriberTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testMethod(): void
+    public function testMethod()
     {
         $seeMethodAnnotation = $this->methodReflection->getAnnotation(AnnotationList::SEE)[3];
 
@@ -96,7 +96,7 @@ final class SeeAnnotationSubscriberTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testMissingFunction(): void
+    public function testMissingFunction()
     {
         $seeFunctionAnnotation = $this->methodReflection->getAnnotation(AnnotationList::SEE)[4];
 
@@ -106,7 +106,7 @@ final class SeeAnnotationSubscriberTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testFunction(): void
+    public function testFunction()
     {
         $seeFunctionAnnotation = $this->functionReflection->getAnnotation(AnnotationList::SEE)[0];
 
@@ -125,7 +125,7 @@ final class SeeAnnotationSubscriberTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testInterface(): void
+    public function testInterface()
     {
         $seeMethodAnnotation = $this->interfaceReflection->getMethod('someSexyMethod')
             ->getAnnotation(AnnotationList::SEE)[0];

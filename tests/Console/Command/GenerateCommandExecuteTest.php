@@ -19,7 +19,7 @@ final class GenerateCommandExecuteTest extends AbstractContainerAwareTestCase
      */
     private $generateCommand;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->generateCommand = $this->container->get(GenerateCommand::class);
 
@@ -27,7 +27,7 @@ final class GenerateCommandExecuteTest extends AbstractContainerAwareTestCase
         $output->setVerbosity(Output::VERBOSITY_QUIET);
     }
 
-    public function testExecute(): void
+    public function testExecute()
     {
         $this->assertFileNotExists(TEMP_DIR . '/api/index.html');
 
@@ -45,7 +45,7 @@ final class GenerateCommandExecuteTest extends AbstractContainerAwareTestCase
         $this->assertFileExists(TEMP_DIR . '/Api/index.html');
     }
 
-    public function testExecuteWithError(): void
+    public function testExecuteWithError()
     {
         $input = new ArrayInput([
             SourceOption::NAME => ['missing'],

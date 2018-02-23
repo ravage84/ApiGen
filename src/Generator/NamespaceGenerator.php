@@ -34,7 +34,7 @@ final class NamespaceGenerator implements GeneratorInterface
         $this->templateRenderer = $templateRenderer;
     }
 
-    public function generate(): void
+    public function generate()
     {
         foreach ($this->namespaceReflectionCollector->getNamespaces() as $namespace) {
             $this->generateForNamespace($namespace, $this->namespaceReflectionCollector);
@@ -44,7 +44,7 @@ final class NamespaceGenerator implements GeneratorInterface
     private function generateForNamespace(
         string $namespace,
         NamespaceReflectionCollector $namespaceReflectionCollector
-    ): void {
+    ) {
         $this->templateRenderer->renderToFile(
             $this->configuration->getTemplateByName('namespace'),
             $this->configuration->getDestinationWithPrefixName('namespace-', $namespace),

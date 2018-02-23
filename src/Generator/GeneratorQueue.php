@@ -29,12 +29,12 @@ final class GeneratorQueue
         $this->stepCounter = $stepCounter;
     }
 
-    public function addGenerator(GeneratorInterface $generator): void
+    public function addGenerator(GeneratorInterface $generator)
     {
         $this->generators[] = $generator;
     }
 
-    public function run(): void
+    public function run()
     {
         $this->progressBar->init($this->stepCounter->getStepCount());
 

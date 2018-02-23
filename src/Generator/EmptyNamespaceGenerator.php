@@ -50,7 +50,7 @@ final class EmptyNamespaceGenerator implements GeneratorInterface
         $this->childNamespacesResolver = $childNamespacesResolver;
     }
 
-    public function generate(): void
+    public function generate()
     {
         $parentEmptyNamespaces = $this->parentEmptyNamespacesResolver->resolve(
             $this->namespaceReflectionCollector->getNamespaces()
@@ -61,7 +61,7 @@ final class EmptyNamespaceGenerator implements GeneratorInterface
         }
     }
 
-    private function generateForNamespace(string $namespace): void
+    private function generateForNamespace(string $namespace)
     {
         $this->templateRenderer->renderToFile(
             $this->configuration->getTemplateByName('namespace'),

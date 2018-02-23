@@ -10,7 +10,7 @@ use ApiGen\Reflection\Contract\Reflection\Trait_\TraitReflectionInterface;
 
 interface BasicReflectionCollectorInterface
 {
-    public function processReflection(AbstractReflectionInterface $reflection): void;
+    public function processReflection(AbstractReflectionInterface $reflection);
 
     /**
      * @return ClassReflectionInterface[]

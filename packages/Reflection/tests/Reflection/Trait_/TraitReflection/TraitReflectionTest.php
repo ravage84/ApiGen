@@ -15,14 +15,14 @@ final class TraitReflectionTest extends AbstractParserAwareTestCase
      */
     private $traitReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
         $traitReflections = $this->reflectionStorage->getTraitReflections();
         $this->traitReflection = $traitReflections[SimpleTrait::class];
     }
 
-    public function testName(): void
+    public function testName()
     {
         $this->assertSame(SimpleTrait::class, $this->traitReflection->getName());
         $this->assertSame('SimpleTrait', $this->traitReflection->getShortName());
@@ -32,21 +32,21 @@ final class TraitReflectionTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testUsers(): void
+    public function testUsers()
     {
         $users = $this->traitReflection->getUsers();
         $this->assertCount(1, $users);
         $this->assertArrayHasKey(ClassUsingTrait::class, $users);
     }
 
-    public function testTraitMethodAliases(): void
+    public function testTraitMethodAliases()
     {
         $this->assertSame([
             'renamedMethod' => ToBeAliasedTrait::class . '::aliasedParentMethod',
         ], $this->traitReflection->getTraitAliases());
     }
 
-    public function testFileName(): void
+    public function testFileName()
     {
         $this->assertSame(__DIR__ . '/Source/SimpleTrait.php', $this->traitReflection->getFileName());
     }

@@ -20,7 +20,7 @@ final class MethodParameterReflectionTest extends AbstractParserAwareTestCase
      */
     private $parameterReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
 
@@ -30,28 +30,28 @@ final class MethodParameterReflectionTest extends AbstractParserAwareTestCase
         $this->parameterReflection = $methodReflection->getParameters()['url'];
     }
 
-    public function testInstance(): void
+    public function testInstance()
     {
         $this->assertInstanceOf(MethodParameterReflectionInterface::class, $this->parameterReflection);
     }
 
-    public function testGetTypeHint(): void
+    public function testGetTypeHint()
     {
         $this->assertSame('int|string', $this->parameterReflection->getTypeHint());
     }
 
-    public function testGetDescription(): void
+    public function testGetDescription()
     {
         $this->assertSame('the URL of the API endpoint', $this->parameterReflection->getDescription());
     }
 
-    public function testType(): void
+    public function testType()
     {
         $this->assertFalse($this->parameterReflection->isArray());
         $this->assertFalse($this->parameterReflection->isVariadic());
     }
 
-    public function testGetDeclaringFunction(): void
+    public function testGetDeclaringFunction()
     {
         $this->assertInstanceOf(
             ClassMethodReflectionInterface::class,
@@ -59,7 +59,7 @@ final class MethodParameterReflectionTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testGetDeclaringFunctionName(): void
+    public function testGetDeclaringFunctionName()
     {
         $this->assertSame(
             'methodWithArgs',
@@ -67,7 +67,7 @@ final class MethodParameterReflectionTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testGetDeclaringClass(): void
+    public function testGetDeclaringClass()
     {
         $this->assertInstanceOf(
             ClassReflectionInterface::class,
@@ -80,7 +80,7 @@ final class MethodParameterReflectionTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testIsPassedByReference(): void
+    public function testIsPassedByReference()
     {
         $this->assertFalse($this->parameterReflection->isPassedByReference());
     }

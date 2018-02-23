@@ -21,12 +21,12 @@ final class ConfigurationTest extends AbstractContainerAwareTestCase
      */
     private $configuration;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->configuration = $this->container->get(Configuration::class);
     }
 
-    public function testResolve(): void
+    public function testResolve()
     {
         $options = $this->configuration->resolveOptions([
             SourceOption::NAME => [],
@@ -47,13 +47,13 @@ final class ConfigurationTest extends AbstractContainerAwareTestCase
         ], $options);
     }
 
-    public function testPrepareOptionsDestinationNotSet(): void
+    public function testPrepareOptionsDestinationNotSet()
     {
         $this->expectException(ConfigurationException::class);
         $this->configuration->resolveOptions([]);
     }
 
-    public function testPrepareOptionsConfigPriority(): void
+    public function testPrepareOptionsConfigPriority()
     {
         $configAndDestinationOptions = [
             DestinationOption::NAME => TEMP_DIR . '/api',

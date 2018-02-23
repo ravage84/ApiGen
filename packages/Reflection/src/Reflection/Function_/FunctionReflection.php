@@ -113,7 +113,7 @@ final class FunctionReflection implements FunctionReflectionInterface, Transform
         return $this->betterFunctionReflection->getFileName();
     }
 
-    public function setTransformerCollector(TransformerCollector $transformerCollector): void
+    public function setTransformerCollector(TransformerCollector $transformerCollector)
     {
         $this->transformerCollector = $transformerCollector;
     }

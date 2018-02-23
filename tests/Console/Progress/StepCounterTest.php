@@ -9,7 +9,7 @@ use ApiGen\Tests\AbstractParserAwareTestCase;
 
 final class StepCounterTest extends AbstractParserAwareTestCase
 {
-    public function testStepCount(): void
+    public function testStepCount()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
         $namespaceReflectionCollector = $this->container->get(NamespaceReflectionCollector::class);

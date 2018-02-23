@@ -2,7 +2,7 @@
 
 namespace ApiGen\Annotation\Tests\AnnotationSubscriber\SeeAnnotationSubscriberSource;
 
-function anotherFunction(): void
+function anotherFunction()
 {
 }
 
@@ -11,6 +11,6 @@ function anotherFunction(): void
  *
  * @see anotherFunction()
  */
-function someFunction(): void
+function someFunction()
 {
 }

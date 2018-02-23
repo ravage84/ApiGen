@@ -9,7 +9,7 @@ trait ParentTrait
      */
     public $someParentProperty;
 
-    public function someParentMethod(): void
+    public function someParentMethod()
     {
     }
 }

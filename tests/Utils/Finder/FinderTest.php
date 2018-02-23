@@ -12,12 +12,12 @@ final class FinderTest extends TestCase
      */
     private $finder;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->finder = new Finder;
     }
 
-    public function testSource(): void
+    public function testSource()
     {
         $this->assertCount(1, $this->finder->find([__DIR__ . '/NetteFinderSource']));
         $this->assertCount(3, $this->finder->find([__DIR__ . '/Source']));

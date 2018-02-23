@@ -32,7 +32,7 @@ final class TemplateRenderer
     /**
      * @param mixed[] $parameters
      */
-    public function renderToFile(string $templateFile, string $destinationFile, array $parameters = []): void
+    public function renderToFile(string $templateFile, string $destinationFile, array $parameters = [])
     {
         $parametersBag = new ParameterBag;
 

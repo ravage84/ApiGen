@@ -14,7 +14,7 @@ final class ClassPropertyReflectionTest extends AbstractParserAwareTestCase
      */
     private $propertyReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
 
@@ -23,7 +23,7 @@ final class ClassPropertyReflectionTest extends AbstractParserAwareTestCase
         $this->propertyReflection = $classReflection->getProperty('memberCount');
     }
 
-    public function testName(): void
+    public function testName()
     {
         $this->assertSame('memberCount', $this->propertyReflection->getName());
         $this->assertSame(
@@ -32,34 +32,34 @@ final class ClassPropertyReflectionTest extends AbstractParserAwareTestCase
         );
     }
 
-    public function testInstance(): void
+    public function testInstance()
     {
         $this->assertInstanceOf(ClassPropertyReflectionInterface::class, $this->propertyReflection);
     }
 
-    public function testGetTypeHint(): void
+    public function testGetTypeHint()
     {
         $this->assertSame('int', $this->propertyReflection->getTypeHint());
     }
 
-    public function testGetDeclaringClass(): void
+    public function testGetDeclaringClass()
     {
         $this->assertInstanceOf(ClassReflectionInterface::class, $this->propertyReflection->getDeclaringClass());
         $this->assertSame(ReflectionProperty::class, $this->propertyReflection->getDeclaringClassName());
     }
 
-    public function testDefaults(): void
+    public function testDefaults()
     {
         $this->assertTrue($this->propertyReflection->isDefault());
         $this->assertSame(52, $this->propertyReflection->getDefaultValue());
     }
 
-    public function testIsStatic(): void
+    public function testIsStatic()
     {
         $this->assertFalse($this->propertyReflection->isStatic());
     }
 
-    public function testLines(): void
+    public function testLines()
     {
         $this->assertSame(10, $this->propertyReflection->getStartLine());
         $this->assertSame(10, $this->propertyReflection->getEndLine());

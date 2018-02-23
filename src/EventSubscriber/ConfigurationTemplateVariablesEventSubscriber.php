@@ -28,7 +28,7 @@ final class ConfigurationTemplateVariablesEventSubscriber implements EventSubscr
         ];
     }
 
-    public function loadTemplateVariables(CreateTemplateEvent $createTemplateEvent): void
+    public function loadTemplateVariables(CreateTemplateEvent $createTemplateEvent)
     {
         $parameterBag = $createTemplateEvent->getParameterBag();
         $parameterBag->addParameters([

@@ -12,7 +12,7 @@ final class ParameterBag
     /**
      * @param mixed[] $parameters
      */
-    public function addParameters(array $parameters): void
+    public function addParameters(array $parameters)
     {
         foreach ($parameters as $key => $value) {
             $this->parameters[$key] = $value;

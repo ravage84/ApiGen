@@ -13,7 +13,7 @@ trait SimpleTrait
      */
     public $someProperty;
 
-    public function someMethod(): void
+    public function someMethod()
     {
     }
 }

@@ -4,6 +4,6 @@ namespace ApiGen\Reflection\Tests\Reflection\Function_\FunctionParameterReflecti
 
 use SplFileInfo;
 
-function functionWithClass(SplFileInfo $splFileInfo): void
+function functionWithClass(SplFileInfo $splFileInfo)
 {
 }

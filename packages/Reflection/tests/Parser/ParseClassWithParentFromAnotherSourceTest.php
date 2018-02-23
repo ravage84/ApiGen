@@ -9,7 +9,7 @@ use ApiGen\Tests\AbstractParserAwareTestCase;
 
 final class ParseClassWithParentFromAnotherSourceTest extends AbstractParserAwareTestCase
 {
-    public function test(): void
+    public function test()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
 

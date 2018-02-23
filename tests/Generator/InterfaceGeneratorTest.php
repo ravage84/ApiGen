@@ -13,7 +13,7 @@ final class InterfaceGeneratorTest extends AbstractContainerAwareTestCase
      */
     private $interfaceGenerator;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         /** @var Parser $parser */
         $parser = $this->container->get(Parser::class);
@@ -22,7 +22,7 @@ final class InterfaceGeneratorTest extends AbstractContainerAwareTestCase
         $this->interfaceGenerator = $this->container->get(InterfaceGenerator::class);
     }
 
-    public function test(): void
+    public function test()
     {
         $this->interfaceGenerator->generate();
         $this->assertFileExists(

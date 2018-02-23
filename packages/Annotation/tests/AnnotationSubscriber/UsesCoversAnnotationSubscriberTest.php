@@ -20,7 +20,7 @@ final class UsesCoversAnnotationSubscriberTest extends AbstractParserAwareTestCa
      */
     private $classReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
         $this->annotationDecorator = $this->container->get(AnnotationDecorator::class);
@@ -28,7 +28,7 @@ final class UsesCoversAnnotationSubscriberTest extends AbstractParserAwareTestCa
         $this->classReflection = $this->reflectionStorage->getClassReflections()[UsesCoversClass::class];
     }
 
-    public function testUses(): void
+    public function testUses()
     {
         $usesAnnotation = $this->classReflection->getAnnotation(AnnotationList::USES)[0];
         $this->assertSame(
@@ -37,7 +37,7 @@ final class UsesCoversAnnotationSubscriberTest extends AbstractParserAwareTestCa
         );
     }
 
-    public function testUsesExistingClass(): void
+    public function testUsesExistingClass()
     {
         $usesAnnotation = $this->classReflection->getAnnotation(AnnotationList::USES)[1];
         $this->assertSame(
@@ -47,7 +47,7 @@ final class UsesCoversAnnotationSubscriberTest extends AbstractParserAwareTestCa
         );
     }
 
-    public function testCovers(): void
+    public function testCovers()
     {
         $coversAnnotation = $this->classReflection->getAnnotation(AnnotationList::COVERS)[0];
         $this->assertSame(

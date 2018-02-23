@@ -15,14 +15,14 @@ final class GeneratorQueueTest extends AbstractContainerAwareTestCase
      */
     private $generatorQueue;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->disableOutputForProgressBar();
 
         $this->generatorQueue = $this->container->get(GeneratorQueue::class);
     }
 
-    public function testRun(): void
+    public function testRun()
     {
         $this->assertFileNotExists(TEMP_DIR . '/file.txt');
 
@@ -35,7 +35,7 @@ final class GeneratorQueueTest extends AbstractContainerAwareTestCase
         $this->assertFileExists(TEMP_DIR . '/file.txt');
     }
 
-    protected function disableOutputForProgressBar(): void
+    protected function disableOutputForProgressBar()
     {
         /** @var OutputInterface $output */
         $output = $this->container->get(ConsoleOutput::class);

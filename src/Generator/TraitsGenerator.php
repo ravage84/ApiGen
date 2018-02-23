@@ -39,7 +39,7 @@ final class TraitsGenerator implements GeneratorInterface
         $this->reflectionStorage = $reflectionStorage;
     }
 
-    public function generate(): void
+    public function generate()
     {
         if (count($this->reflectionStorage->getTraitReflections()) < 1) {
             return;

@@ -54,7 +54,7 @@ final class ThemeDirectoryOption implements OptionInterface
         return '';
     }
 
-    private function validateDirectory(string $value): void
+    private function validateDirectory(string $value)
     {
         if (! is_dir($value)) {
             throw new ConfigurationException(sprintf(

@@ -17,7 +17,7 @@ final class ImplementersTest extends AbstractParserAwareTestCase
      */
     private $interfaceReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
 
@@ -25,12 +25,12 @@ final class ImplementersTest extends AbstractParserAwareTestCase
         $this->interfaceReflection = $interfaceReflections[PoorInterface::class];
     }
 
-    public function testGetInterfaces(): void
+    public function testGetInterfaces()
     {
         $this->assertCount(0, $this->interfaceReflection->getInterfaces());
     }
 
-    public function testGetImplementers(): void
+    public function testGetImplementers()
     {
         $implementers = $this->interfaceReflection->getImplementers();
 

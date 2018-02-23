@@ -14,7 +14,7 @@ final class TraitMethodReflectionTest extends AbstractParserAwareTestCase
      */
     private $traitMethodReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
 
@@ -24,13 +24,13 @@ final class TraitMethodReflectionTest extends AbstractParserAwareTestCase
         $this->traitMethodReflection = $traitReflection->getMethod('methodWithArgs');
     }
 
-    public function testGetDeclaringTrait(): void
+    public function testGetDeclaringTrait()
     {
         $this->assertInstanceOf(TraitReflectionInterface::class, $this->traitMethodReflection->getDeclaringTrait());
         $this->assertSame(TraitMethodTrait::class, $this->traitMethodReflection->getDeclaringTraitName());
     }
 
-    public function testGetParameters(): void
+    public function testGetParameters()
     {
         $parameters = $this->traitMethodReflection->getParameters();
         $this->assertCount(3, $parameters);

@@ -12,7 +12,7 @@ final class FiltersAwareLatteEngineFactory
      */
     private $filterProviders = [];
 
-    public function addFilterProvider(FilterProviderInterface $filtersProvider): void
+    public function addFilterProvider(FilterProviderInterface $filtersProvider)
     {
         $this->filterProviders[] = $filtersProvider;
     }

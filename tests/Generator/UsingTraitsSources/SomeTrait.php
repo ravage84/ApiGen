@@ -9,7 +9,7 @@ trait SomeTrait
      */
     private $property;
 
-    public function method(): void
+    public function method()
     {
     }
 }

@@ -14,7 +14,7 @@ final class TraitPropertyReflectionTest extends AbstractParserAwareTestCase
      */
     private $propertyReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
         $traitReflections = $this->reflectionStorage->getTraitReflections();
@@ -22,7 +22,7 @@ final class TraitPropertyReflectionTest extends AbstractParserAwareTestCase
         $this->propertyReflection = $traitReflection->getProperty('memberCount');
     }
 
-    public function testGetDeclaringTrait(): void
+    public function testGetDeclaringTrait()
     {
         $this->assertInstanceOf(TraitReflectionInterface::class, $this->propertyReflection->getDeclaringTrait());
         $this->assertSame(TraitPropertyTrait::class, $this->propertyReflection->getDeclaringTraitName());

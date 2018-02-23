@@ -18,7 +18,7 @@ final class ParameterWithConstantDefalutValueTest extends AbstractParserAwareTes
      */
     private $classConstantParameterReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
 
@@ -29,14 +29,14 @@ final class ParameterWithConstantDefalutValueTest extends AbstractParserAwareTes
         $this->classConstantParameterReflection = $methodReflection->getParameters()['when'];
     }
 
-    public function testGetTypeHint(): void
+    public function testGetTypeHint()
     {
         $this->assertSame('string', $this->localConstantParameterReflection->getTypeHint());
         $this->assertSame('string', $this->classConstantParameterReflection->getTypeHint());
     }
 
     // @todo - fix after constant dump is fixed
-    //public function testType(): void
+    //public function testType()
     //{
     //    $this->assertSame('HERE', $this->localConstantParameterReflection->getDefaultValueDefinition());
     //    $this->assertSame('TODAY', $this->classConstantParameterReflection->getDefaultValueDefinition());

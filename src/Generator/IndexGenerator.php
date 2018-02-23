@@ -24,7 +24,7 @@ final class IndexGenerator implements GeneratorInterface
         $this->templateRenderer = $templateRenderer;
     }
 
-    public function generate(): void
+    public function generate()
     {
         $this->templateRenderer->renderToFile(
             $this->configuration->getTemplateByName('index'),

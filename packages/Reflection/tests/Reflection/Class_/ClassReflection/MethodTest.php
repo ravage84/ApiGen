@@ -8,12 +8,12 @@ use InvalidArgumentException;
 
 final class MethodTest extends AbstractReflectionClassTestCase
 {
-    public function testNames(): void
+    public function testNames()
     {
         $this->assertSame(AccessLevels::class, $this->reflectionClass->getName());
     }
 
-    public function testGetMethod(): void
+    public function testGetMethod()
     {
         $this->assertInstanceOf(
             ClassMethodReflectionInterface::class,
@@ -21,13 +21,13 @@ final class MethodTest extends AbstractReflectionClassTestCase
         );
     }
 
-    public function testGetMethodNonExisting(): void
+    public function testGetMethodNonExisting()
     {
         $this->expectException(InvalidArgumentException::class);
         $this->reflectionClass->getMethod('notPresentMethod');
     }
 
-    public function testGetMethods(): void
+    public function testGetMethods()
     {
         $methods = $this->reflectionClass->getMethods();
         $this->assertCount(5, $methods);
@@ -42,12 +42,12 @@ final class MethodTest extends AbstractReflectionClassTestCase
         ], $methodsNames);
     }
 
-    public function testGetOwnMethods(): void
+    public function testGetOwnMethods()
     {
         $this->assertCount(3, $this->reflectionClass->getOwnMethods());
     }
 
-    public function testGetInheritedMethods(): void
+    public function testGetInheritedMethods()
     {
         $this->assertCount(1, $this->reflectionClass->getInheritedMethods());
     }

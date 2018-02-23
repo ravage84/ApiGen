@@ -28,7 +28,7 @@ final class ProgressBarEventSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function generateProgress(): void
+    public function generateProgress()
     {
         $this->progressBar->increment(1);
     }

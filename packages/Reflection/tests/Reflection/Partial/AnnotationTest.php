@@ -16,23 +16,23 @@ final class AnnotationTest extends AbstractParserAwareTestCase
      */
     private $reflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
         $this->reflection = $this->reflectionStorage->getClassReflections()[SomeClassWithAnnotations::class];
     }
 
-    public function testIsDeprecated(): void
+    public function testIsDeprecated()
     {
         $this->assertFalse($this->reflection->isDeprecated());
     }
 
-    public function testGetDescription(): void
+    public function testGetDescription()
     {
         $this->assertSame('This is some description.', $this->reflection->getDescription());
     }
 
-    public function testGetAnnotations(): void
+    public function testGetAnnotations()
     {
         $annotations = $this->reflection->getAnnotations();
 
@@ -43,7 +43,7 @@ final class AnnotationTest extends AbstractParserAwareTestCase
         $this->assertInstanceOf(Generic::class, $annotations[2]);
     }
 
-    public function testGetAnnotation(): void
+    public function testGetAnnotation()
     {
         /** @var Author[] $authorAnnotations */
         $authorAnnotations = $this->reflection->getAnnotation('author');
@@ -51,7 +51,7 @@ final class AnnotationTest extends AbstractParserAwareTestCase
         $this->assertSame('Everyone.', $authorAnnotation->getAuthorName());
     }
 
-    public function testHasAnnotation(): void
+    public function testHasAnnotation()
     {
         $this->assertTrue($this->reflection->hasAnnotation('see'));
         $this->assertFalse($this->reflection->hasAnnotation('nope'));

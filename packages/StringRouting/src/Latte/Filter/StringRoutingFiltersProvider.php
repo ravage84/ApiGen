@@ -74,7 +74,7 @@ final class StringRoutingFiltersProvider implements FilterProviderInterface
     /**
      * @param mixed $reflection
      */
-    private function ensureFilterArgumentsIsReflection($reflection, string $filterName): void
+    private function ensureFilterArgumentsIsReflection($reflection, string $filterName)
     {
         if (! $reflection instanceof AbstractReflectionInterface) {
             throw new InvalidArgumentException(sprintf(

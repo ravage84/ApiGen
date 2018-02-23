@@ -16,12 +16,12 @@ final class LinkFilterTest extends AbstractContainerAwareTestCase
      */
     private $latte;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->latte = $this->container->get(Engine::class);
     }
 
-    public function testInvalidArgument(): void
+    public function testInvalidArgument()
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -34,7 +34,7 @@ final class LinkFilterTest extends AbstractContainerAwareTestCase
         ]);
     }
 
-    public function testBuildLinkIfReflectionFoundFilter(): void
+    public function testBuildLinkIfReflectionFoundFilter()
     {
         $parser = $this->container->get(Parser::class);
         $parser->parseFilesAndDirectories([__DIR__ . '/Source/TestClass.php']);

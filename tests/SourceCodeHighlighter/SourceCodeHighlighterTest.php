@@ -12,12 +12,12 @@ final class SourceCodeHighlighterTest extends AbstractContainerAwareTestCase
      */
     private $sourceCodeHighlighter;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->sourceCodeHighlighter = $this->container->get(SourceCodeHighlighter::class);
     }
 
-    public function testHighlight(): void
+    public function testHighlight()
     {
         $this->assertSame(
             '<span class="php-var">$a</span> = <span class="php-num">1</span>',
@@ -25,7 +25,7 @@ final class SourceCodeHighlighterTest extends AbstractContainerAwareTestCase
         );
     }
 
-    public function testHighlightAndAddLineNumbers(): void
+    public function testHighlightAndAddLineNumbers()
     {
         $this->assertSame(
             '<span class="line">1: </span><span class="php-var">$a</span> = <span class="php-num">1</span>',

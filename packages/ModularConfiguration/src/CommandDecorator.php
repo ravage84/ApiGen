@@ -16,12 +16,12 @@ final class CommandDecorator
      */
     private $options = [];
 
-    public function addOption(CommandBoundInterface $option): void
+    public function addOption(CommandBoundInterface $option)
     {
         $this->options[$option->getName()] = $option;
     }
 
-    public function decorateCommand(Command $command): void
+    public function decorateCommand(Command $command)
     {
         foreach ($this->options as $option) {
             if (! $this->isCommandCandidate($option, $command)) {
@@ -43,7 +43,7 @@ final class CommandDecorator
         return is_a($command, $option->getCommand());
     }
 
-    private function addCommandArgument(Command $command, CommandArgumentInterface $argument): void
+    private function addCommandArgument(Command $command, CommandArgumentInterface $argument)
     {
         $command->addArgument(
             $argument->getName(),
@@ -66,7 +66,7 @@ final class CommandDecorator
         return $mode;
     }
 
-    private function addCommandOption(Command $command, CommandOptionInterface $option): void
+    private function addCommandOption(Command $command, CommandOptionInterface $option)
     {
         $command->addOption(
             $option->getName(),

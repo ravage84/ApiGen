@@ -9,7 +9,7 @@ final class ReturnedClass
      */
     public $someProperty;
 
-    public function someMethod(): void
+    public function someMethod()
     {
     }
 }

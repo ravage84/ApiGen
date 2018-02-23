@@ -62,7 +62,7 @@ final class DestinationOption implements CommandOptionInterface
         return $this->fileSystem->getAbsolutePath($value);
     }
 
-    private function validateValue(?string $destination): void
+    private function validateValue(?string $destination)
     {
         if (! $destination) {
             throw new ConfigurationException(

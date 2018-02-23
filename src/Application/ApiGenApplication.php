@@ -53,7 +53,7 @@ final class ApiGenApplication
         $this->output = $output;
     }
 
-    public function runCommand(RunCommand $runCommand): void
+    public function runCommand(RunCommand $runCommand)
     {
         $options = $this->configuration->resolveOptions([
             SourceOption::NAME => $runCommand->getSource(),
@@ -71,7 +71,7 @@ final class ApiGenApplication
         $this->output->writeln('<info>Your documentation has been generated successfully!</info>');
     }
 
-    private function prepareDestination(string $destination, bool $shouldOverwrite): void
+    private function prepareDestination(string $destination, bool $shouldOverwrite)
     {
         if ($shouldOverwrite) {
             $this->fileSystem->purgeDir($destination);
@@ -80,7 +80,7 @@ final class ApiGenApplication
         $this->copyThemeResourcesToDestination($destination);
     }
 
-    private function copyThemeResourcesToDestination(string $destination): void
+    private function copyThemeResourcesToDestination(string $destination)
     {
         $this->fileSystem->copyDirectory(
             $this->configuration->getTemplatesDirectory() . '/resources',

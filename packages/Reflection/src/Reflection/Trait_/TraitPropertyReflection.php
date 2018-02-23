@@ -161,7 +161,7 @@ final class TraitPropertyReflection implements TraitPropertyReflectionInterface,
         return $this->hasAnnotation(AnnotationList::DEPRECATED);
     }
 
-    public function setTransformerCollector(TransformerCollector $transformerCollector): void
+    public function setTransformerCollector(TransformerCollector $transformerCollector)
     {
         $this->transformerCollector = $transformerCollector;
     }

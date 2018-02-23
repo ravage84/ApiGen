@@ -13,7 +13,7 @@ final class FileSystem
         return str_replace(['\\', '/'], DIRECTORY_SEPARATOR, $path);
     }
 
-    public function purgeDir(string $path): void
+    public function purgeDir(string $path)
     {
         NetteFileSystem::delete($path);
         NetteFileSystem::createDir($path);
@@ -41,7 +41,7 @@ final class FileSystem
         return true;
     }
 
-    public function copyDirectory(string $sourceDirectory, string $destinationDirectory): void
+    public function copyDirectory(string $sourceDirectory, string $destinationDirectory)
     {
         self::ensureDirectoryExists($destinationDirectory);
 
@@ -57,13 +57,13 @@ final class FileSystem
         }
     }
 
-    public static function ensureDirectoryExistsForFile(string $file): void
+    public static function ensureDirectoryExistsForFile(string $file)
     {
         $directory = dirname($file);
         self::ensureDirectoryExists($directory);
     }
 
-    public static function ensureDirectoryExists(string $directory): void
+    public static function ensureDirectoryExists(string $directory)
     {
         if (! is_dir($directory)) {
             mkdir($directory, 0755, true);

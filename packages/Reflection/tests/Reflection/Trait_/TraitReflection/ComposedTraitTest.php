@@ -13,14 +13,14 @@ final class ComposedTraitTest extends AbstractParserAwareTestCase
      */
     private $classReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/ComposeTraitSource']);
         $classReflections = $this->reflectionStorage->getClassReflections();
         $this->classReflection = $classReflections[BaseClass::class];
     }
 
-    public function test(): void
+    public function test()
     {
         $this->assertCount(2, $this->classReflection->getTraits());
         $this->assertCount(1, $this->classReflection->getMethods());

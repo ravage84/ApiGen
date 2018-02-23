@@ -8,12 +8,12 @@ use ApiGen\Reflection\Tests\Reflection\Class_\ClassReflection\Source\SomeTrait;
 
 final class TraitsTest extends AbstractReflectionClassTestCase
 {
-    public function testName(): void
+    public function testName()
     {
         $this->assertSame(AccessLevels::class, $this->reflectionClass->getName());
     }
 
-    public function testGetTraits(): void
+    public function testGetTraits()
     {
         $traits = $this->reflectionClass->getTraits();
         $this->assertCount(1, $traits);
@@ -21,7 +21,7 @@ final class TraitsTest extends AbstractReflectionClassTestCase
         $this->assertInstanceOf(TraitReflectionInterface::class, $traits[SomeTrait::class]);
     }
 
-    public function testGetTraitAliases(): void
+    public function testGetTraitAliases()
     {
         $this->assertCount(0, $this->reflectionClass->getTraitAliases());
     }

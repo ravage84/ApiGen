@@ -23,7 +23,7 @@ final class InterfaceReflectionTest extends AbstractParserAwareTestCase
      */
     private $classReflection;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->parser->parseFilesAndDirectories([__DIR__ . '/Source']);
 
@@ -34,19 +34,19 @@ final class InterfaceReflectionTest extends AbstractParserAwareTestCase
         $this->classReflection = $classReflections[SomeClass::class];
     }
 
-    public function testNames(): void
+    public function testNames()
     {
         $this->assertSame(SomeInterface::class, $this->interfaceReflection->getName());
         $this->assertSame('SomeInterface', $this->interfaceReflection->getShortName());
     }
 
-    public function testImplementsInterface(): void
+    public function testImplementsInterface()
     {
         $this->assertFalse($this->interfaceReflection->implementsInterface('NoInterface'));
         $this->assertTrue($this->interfaceReflection->implementsInterface(RichInterface::class));
     }
 
-    public function testGetInterfaces(): void
+    public function testGetInterfaces()
     {
         $interfaces = $this->interfaceReflection->getInterfaces();
 
@@ -56,13 +56,13 @@ final class InterfaceReflectionTest extends AbstractParserAwareTestCase
         $this->assertInstanceOf(InterfaceReflectionInterface::class, $interfaces[RichInterface::class]);
     }
 
-    public function testLines(): void
+    public function testLines()
     {
         $this->assertSame(5, $this->interfaceReflection->getStartLine());
         $this->assertSame(11, $this->interfaceReflection->getEndLine());
     }
 
-    public function testFileName(): void
+    public function testFileName()
     {
         $this->assertSame(__DIR__ . '/Source/SomeInterface.php', $this->interfaceReflection->getFileName());
 

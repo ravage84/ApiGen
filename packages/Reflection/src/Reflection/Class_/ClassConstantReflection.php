@@ -138,7 +138,7 @@ final class ClassConstantReflection implements ClassConstantReflectionInterface,
         return $this->docBlock->getTags();
     }
 
-    public function setTransformerCollector(TransformerCollector $transformerCollector): void
+    public function setTransformerCollector(TransformerCollector $transformerCollector)
     {
         $this->transformerCollector = $transformerCollector;
     }

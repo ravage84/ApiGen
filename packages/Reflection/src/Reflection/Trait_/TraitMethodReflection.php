@@ -161,7 +161,7 @@ final class TraitMethodReflection implements TraitMethodReflectionInterface, Tra
         return $this->betterMethodReflection->isPrivate();
     }
 
-    public function setTransformerCollector(TransformerCollector $transformerCollector): void
+    public function setTransformerCollector(TransformerCollector $transformerCollector)
     {
         $this->transformerCollector = $transformerCollector;
     }

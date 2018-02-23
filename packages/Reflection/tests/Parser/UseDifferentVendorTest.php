@@ -9,7 +9,7 @@ use MyVendor\MyClass;
 
 final class UseDifferentVendorTest extends AbstractContainerAwareTestCase
 {
-    public function test(): void
+    public function test()
     {
         $parser = $this->container->get(Parser::class);
 

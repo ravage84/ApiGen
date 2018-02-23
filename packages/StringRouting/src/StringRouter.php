@@ -16,7 +16,7 @@ final class StringRouter
      */
     private $routes = [];
 
-    public function addRoute(RouteInterface $route): void
+    public function addRoute(RouteInterface $route)
     {
         $this->routes[] = $route;
     }

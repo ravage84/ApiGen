@@ -18,7 +18,7 @@ final class AnnotationReflectionCollectorTest extends AbstractContainerAwareTest
      */
     private $annotationReflectionCollector;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         /** @var Configuration $configuration */
         $configuration = $this->container->get(Configuration::class);
@@ -35,7 +35,7 @@ final class AnnotationReflectionCollectorTest extends AbstractContainerAwareTest
         $this->annotationReflectionCollector = $this->container->get(AnnotationReflectionCollector::class);
     }
 
-    public function test(): void
+    public function test()
     {
         $this->assertCount(
             1,

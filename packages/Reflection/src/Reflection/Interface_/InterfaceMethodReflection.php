@@ -67,7 +67,7 @@ final class InterfaceMethodReflection implements InterfaceMethodReflectionInterf
             ->getName();
     }
 
-    public function setTransformerCollector(TransformerCollector $transformerCollector): void
+    public function setTransformerCollector(TransformerCollector $transformerCollector)
     {
         $this->transformerCollector = $transformerCollector;
     }

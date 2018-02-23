@@ -27,7 +27,7 @@ final class TransformerCollector
         $this->reflectionCollectorCollector = $reflectionCollectorCollector;
     }
 
-    public function addTransformer(TransformerInterface $transformer): void
+    public function addTransformer(TransformerInterface $transformer)
     {
         $this->transformers[] = $transformer;
     }
