@@ -12,7 +12,7 @@ final class ClassesGenerator implements GeneratorInterface
     /**
      * @var string
      */
-    private const NAME = 'classes';
+    const NAME = 'classes';
 
     /**
      * @var Configuration

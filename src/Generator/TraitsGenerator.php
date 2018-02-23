@@ -12,7 +12,7 @@ final class TraitsGenerator implements GeneratorInterface
     /**
      * @var string
      */
-    private const NAME = 'traits';
+    const NAME = 'traits';
 
     /**
      * @var Configuration

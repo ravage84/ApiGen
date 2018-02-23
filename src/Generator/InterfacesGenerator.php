@@ -12,7 +12,7 @@ final class InterfacesGenerator implements GeneratorInterface
     /**
      * @var string
      */
-    private const NAME = 'interfaces';
+    const NAME = 'interfaces';
 
     /**
      * @var Configuration

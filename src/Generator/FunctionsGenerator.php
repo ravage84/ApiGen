@@ -12,7 +12,7 @@ final class FunctionsGenerator implements GeneratorInterface
     /**
      * @var string
      */
-    private const NAME = 'functions';
+    const NAME = 'functions';
 
     /**
      * @var Configuration

@@ -10,7 +10,7 @@ final class ProgressBar
     /**
      * @var string
      */
-    private const BAR_FORMAT = 'debug';
+    const BAR_FORMAT = 'debug';
 
     /**
      * @var ProgressBarHelper

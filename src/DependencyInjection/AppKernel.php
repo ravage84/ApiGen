@@ -12,7 +12,7 @@ final class AppKernel extends Kernel
     /**
      * @var string
      */
-    private const CONFIG_NAME = 'apigen.yml';
+    const CONFIG_NAME = 'apigen.yml';
 
     public function __construct()
     {

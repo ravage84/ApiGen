@@ -12,7 +12,7 @@ final class ExceptionsGenerator implements GeneratorInterface
     /**
      * @var string
      */
-    private const NAME = 'exceptions';
+    const NAME = 'exceptions';
 
     /**
      * @var Configuration

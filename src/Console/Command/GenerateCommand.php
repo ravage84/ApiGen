@@ -16,7 +16,7 @@ final class GenerateCommand extends Command
     /**
      * @var string
      */
-    private const NAME = 'generate';
+    const NAME = 'generate';
 
     /**
      * @var ApiGenApplication
