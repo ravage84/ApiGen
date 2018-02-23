@@ -2,6 +2,6 @@
 
 namespace ApiGen\Reflection\Tests\Parser\Source;
 
-final class ChildOfObject extends Object
+final class ChildOfSourceObject extends SourceObject
 {
 }
